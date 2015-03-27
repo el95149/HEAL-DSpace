@@ -10,17 +10,17 @@
 #
 # See org.dspace.core.Email for information on the format of this file.
 #
-Subject: Feedback Form Information
+Subject: Φόρμα Επικοινωνίας
 
-Comments:
+Σχόλια:
 
 {6}
 
 
-Date: {0}
+Ημερομηνία: {0}
 Email: {1}
-Logged In As: {2}
-Referring Page: {3}
+Συνδεδεμένος ως: {2}
+Σελίδα Αναφοράς: {3}
 User Agent: {4}
 Session: {5}
 

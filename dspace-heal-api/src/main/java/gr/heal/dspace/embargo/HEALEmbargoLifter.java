@@ -25,7 +25,7 @@ import org.dspace.embargo.DefaultEmbargoLifter;
 public class HEALEmbargoLifter extends DefaultEmbargoLifter {
 
 	private static Log log = LogFactory.getLog(HEALEmbargoLifter.class);
-	
+
 	@Override
 	public void liftEmbargo(Context context, Item item) throws SQLException,
 			AuthorizeException, IOException {
@@ -35,7 +35,7 @@ public class HEALEmbargoLifter extends DefaultEmbargoLifter {
 		//set 'heal.access' field value to 'free', since default polices are enforced by the lifter
 		item.clearMetadata("heal", "access", null, Item.ANY);
 		item.addMetadata("heal", "access", null, ConfigurationManager.getProperty("default.language"), "free");
-		
+
 		item.clearMetadata("heal", "dateAvailable", null, Item.ANY);
 		DCValue[] dcDateIssuedValues = item.getMetadata("dc.date.issued");
 		if (dcDateIssuedValues.length == 1) {// set the date to the existing

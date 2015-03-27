@@ -376,10 +376,10 @@ public class EditProfile extends AbstractDSpaceTransformer
            subscriptions.addOption(-1,T_select_collection);
            for (Collection possible : possibleList)
            {
-               String name = possible.getMetadata("name");
-               if (name.length() > 50)
+               String name = possible.getParentObject().getName() + " > " + possible.getMetadata("name");
+               if (name.length() > 80)
                {
-                   name = name.substring(0, 47) + "...";
+                   name = name.substring(0, 77) + "...";
                }
                subscriptions.addOption(possible.getID(), name);
            }

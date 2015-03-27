@@ -8,10 +8,10 @@
 #
 # See org.dspace.core.Email for information on the format of this file.
 #
-Subject: DSpace: Registration Notification
+Subject: Υπατία: Ειδοποίηση Νέας Εγγραφής
 
-A new user has registered on {0} at {1}:
+Ένας νέος χρήστης έκανε αίτηση για εγγραφή στην {0} - {1}:
 
-Name:                   {2}
-Email:                  {3}
-Date:                   {4}
+Όνομα:                        {2}
+Email:                        {3}
+Ημερομηνία:                   {4}

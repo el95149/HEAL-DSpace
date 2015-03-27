@@ -6,14 +6,14 @@
 #
 # See org.dspace.core.Email for information on the format of this file.
 #
-Subject: DSpace - The item export you requested was not completed.
-The item export you requested was not completed, due to the following reason:
+Subject: Υπατία - Αποτυχία εξαγωγής αντικειμένου
+Η εξαγωγή του αντικειμένου που ζητήσατε δεν ολοκληρώθηκε για τον παρακάτω λόγο:
  {0}
 
-For more information you may contact your system administrator:
+Για περισσότερες πληροφορίες επικοινωνήστε με το διαχειριστή συστήματος:
  {1}
 
 
 
-The DSpace Team
+Υπατία, Ιδρυματικό Αποθετήριο του ΤΕΙ Αθήνας
 

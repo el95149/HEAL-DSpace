@@ -121,10 +121,10 @@
 				<workflow-editable>false</workflow-editable>
 			</step>
 
-			<!--HEAL metadata processing -->
+			<!-- HEAL metadata processing -->
 			<step>
 				<heading></heading>
-				<processing-class>gr.heal.dspace.submit.step.ProcessMetadataStep</processing-class>
+				<processing-class>com.imc.dspace.submit.step.ProcessMetadataStep</processing-class>
 				<workflow-editable>false</workflow-editable>
 			</step>
 

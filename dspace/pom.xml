@@ -28,7 +28,7 @@
 	</scm>
 
 	<properties>
-		<default.dspace.dir>/dspace</default.dspace.dir>
+		<default.dspace.dir>C:/Users/user/Projects/TEI-Ath/dspace-install</default.dspace.dir>
 		<default.mail.server>smtp.example.com</default.mail.server>
 		<default.solr.server>http://localhost:8080/solr</default.solr.server>
 	</properties>
@@ -49,7 +49,7 @@
 			</activation>
 			<build>
 				<filters>
-					<filter>${dspace.config}</filter>
+					<filter>${basedir}/config/dspace.cfg</filter>
 				</filters>
 			</build>
 		</profile>
@@ -70,13 +70,37 @@
 			<properties>
 				<default.db.name>postgres</default.db.name>
 				<default.db.driver>org.postgresql.Driver</default.db.driver>
-				<default.db.url>
-					jdbc:postgresql://localhost:5432/dspace
-				</default.db.url>
-				<default.db.username>dspace</default.db.username>
-				<default.db.password>dspace</default.db.password>
+				<default.db.url>jdbc:postgresql://localhost:5432/dspace_heal</default.db.url>
+				<default.db.username>postgres</default.db.username>
+				<default.db.password>test</default.db.password>
 			</properties>
 		</profile>
+
+        <profile>
+            <id>maria-turbo</id>
+            <properties>
+                <default.db.name>postgres</default.db.name>
+                <default.db.driver>org.postgresql.Driver</default.db.driver>
+                <default.db.url>jdbc:postgresql://10.0.0.83:5432/dspace</default.db.url>
+                <default.db.username>postgres</default.db.username>
+                <default.db.password>test</default.db.password>
+                <default.dspace.dir>//maria-turbo/dspaceHome</default.dspace.dir>
+                <default.solr.server>http://localhost:8088/solr</default.solr.server>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>production</id>
+            <properties>
+                <default.db.name>postgres</default.db.name>
+                <default.db.driver>org.postgresql.Driver</default.db.driver>
+                <default.db.url>jdbc:postgresql://localhost:5432/hypatia</default.db.url>
+                <default.db.username>dspace</default.db.username>
+                <default.db.password>dspace</default.db.password>
+                <default.dspace.dir>/dspace</default.dspace.dir>
+                <default.solr.server>http://localhost:8080/solr</default.solr.server>
+            </properties>
+        </profile>
 
 		<profile>
 			<id>postgres-support</id>
@@ -203,6 +227,18 @@
 				<module>../dspace-xmlui/dspace-heal-xmlui-webapp</module>
 			</modules>
 		</profile>
+
+        <profile>
+            <id>dspace-myir</id>
+            <activation>
+                <file>
+                    <exists>../dspace-xmlui/dspace-myir/pom.xml</exists>
+                </file>
+            </activation>
+            <modules>
+                <module>../dspace-xmlui/dspace-myir</module>
+            </modules>
+        </profile>
 
 	</profiles>
 

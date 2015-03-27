@@ -1,34 +1,34 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-   <modelVersion>4.0.0</modelVersion>
-   <groupId>org.dspace</groupId>
-   <artifactId>dspace-oai-webapp</artifactId>
-   <packaging>war</packaging>
-   <name>DSpace OAI :: Web Application Resources</name>
-   <description>DSpace OAI Service Provider Webapplication Resources</description>
-   <url>http://projects.dspace.org/dspace-oai/dspace-oai-webapp</url>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.dspace</groupId>
+    <artifactId>dspace-oai-webapp</artifactId>
+    <packaging>war</packaging>
+    <name>DSpace OAI :: Web Application Resources</name>
+    <description>DSpace OAI Service Provider Webapplication Resources</description>
+    <url>http://projects.dspace.org/dspace-oai/dspace-oai-webapp</url>
 
-   <!-- 
-      A Parent POM that Maven inherits DSpace Default 
-      POM atrributes from. 
-   -->
-   <parent>
-      <groupId>org.dspace</groupId>
-      <artifactId>dspace-oai</artifactId>
-      <version>1.8.2</version>
-      <relativePath>..</relativePath>
-   </parent>
+    <!--
+       A Parent POM that Maven inherits DSpace Default
+       POM atrributes from.
+    -->
+    <parent>
+        <groupId>org.dspace</groupId>
+        <artifactId>dspace-oai</artifactId>
+        <version>1.8.2</version>
+        <relativePath>..</relativePath>
+    </parent>
 
-   <!-- 
-      The Subversion repository location is used by Continuum to update against
-      when changes have occured, this spawns a new build cycle and releases snapshots
-      into the snapshot repository below.
-   -->
-   <scm>
-      <connection>scm:svn:http://scm.dspace.org/svn/repo/tags/dspace-1.8.2</connection>
-      <developerConnection>scm:svn:https://scm.dspace.org/svn/repo/tags/dspace-1.8.2</developerConnection>
-      <url>http://scm.dspace.org/svn/repo/tags/dspace-1.8.2</url>
-   </scm>
-   
+    <!--
+       The Subversion repository location is used by Continuum to update against
+       when changes have occured, this spawns a new build cycle and releases snapshots
+       into the snapshot repository below.
+    -->
+    <scm>
+        <connection>scm:svn:http://scm.dspace.org/svn/repo/tags/dspace-1.8.2</connection>
+        <developerConnection>scm:svn:https://scm.dspace.org/svn/repo/tags/dspace-1.8.2</developerConnection>
+        <url>http://scm.dspace.org/svn/repo/tags/dspace-1.8.2</url>
+    </scm>
+
    <build>
       <plugins>
          <plugin>
@@ -59,11 +59,11 @@
    </build>
 
    <profiles>
-      <!-- 
+      <!--
          when activated a dspace.config configuration
-         file location passed on the commandline 
-         (-Ddspace.config=...) can be passed through 
-         to be used as a filter source by projects for 
+         file location passed on the commandline
+         (-Ddspace.config=...) can be passed through
+         to be used as a filter source by projects for
          tasks such as updating the ${dspace.dir} in
          web.xml etc.
       -->
@@ -130,7 +130,7 @@
 		<artifactId>xsom</artifactId>
 		<version>20110809</version>
 	</dependency>
-	<!-- END aanagnostopoulos -->      
+	<!-- END aanagnostopoulos -->
    </dependencies>
 
 </project>

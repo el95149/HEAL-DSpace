@@ -42,10 +42,11 @@
         <!--Which sidebar facets are to be displayed-->
         <property name="sidebarFacets">
             <list>
+                <ref bean="sidebarFacetSubject" />
                 <ref bean="sidebarFacetType" />
                 <ref bean="sidebarFacetAuthor" />
-                <ref bean="sidebarFacetDateIssued" />
-                <ref bean="sidebarFacetSubject" />
+                <ref bean="sidebarFacetJournalName" />
+                <ref bean="sidebarFacetDatePublished" />
             </list>
         </property>
         <!--The search filters which can be used on the discovery search page-->
@@ -54,8 +55,14 @@
                 <ref bean="searchFilterTitle" />
                 <ref bean="searchFilterAuthor" />
                 <ref bean="searchFilterSubject" />
-                <ref bean="searchFilterIssued" />
+                <ref bean="searchFilterKeyword" />
                 <ref bean="searchFilterType" />
+                <ref bean="searchFilterDate" />
+                <ref bean="searchFilterIssued" />
+                <ref bean="searchFilterContributor" />
+                <ref bean="searchFilterJournalName" />
+                <ref bean="searchFilterAbstract" />
+                <ref bean="searchFilterLanguage" />
             </list>
         </property>
         <!--The sort filters for the discovery search-->
@@ -109,9 +116,21 @@
         <property name="metadataFields">
             <list>
                 <value>dc.contributor.author</value>
-                <!-- <value>heal.creatorName</value> -->
+                <!--<value>heal.creatorName</value>
+                <value>heal.advisorName</value>
+                <value>heal.committeeMemberName</value>-->
+            </list>
+        </property>
+        <property name="fullAutoComplete" value="true"/>
+    </bean>
+
+    <bean id="searchFilterContributor" class="org.dspace.discovery.configuration.DiscoverySearchFilter">
+        <property name="indexFieldName" value="contributor"/>
+        <property name="metadataFields">
+            <list>
                 <value>heal.advisorName</value>
                 <value>heal.committeeMemberName</value>
+                <value>heal.contributorName</value>
             </list>
         </property>
         <property name="fullAutoComplete" value="true"/>
@@ -121,11 +140,32 @@
         <property name="indexFieldName" value="subject"/>
         <property name="metadataFields">
             <list>
-                <value>dc.subject.*</value>
-                <!-- <value>heal.keyword.*</value> -->
+                <value>heal.classification.*</value>
             </list>
         </property>
         <property name="fullAutoComplete" value="true"/>
+    </bean>
+
+    <bean id="searchFilterKeyword" class="org.dspace.discovery.configuration.DiscoverySearchFilter">
+        <property name="indexFieldName" value="keyword"/>
+        <property name="metadataFields">
+            <list>
+                <value>dc.subject.*</value>
+            </list>
+        </property>
+        <property name="fullAutoComplete" value="true"/>
+    </bean>
+
+    <bean id="searchFilterDate" class="org.dspace.discovery.configuration.DiscoverySearchFilter">
+        <property name="indexFieldName" value="datePublished"/>
+        <property name="metadataFields">
+            <list>
+                <value>heal.publicationDate</value>
+                <value>heal.dateCreated</value>
+            </list>
+        </property>
+        <property name="type" value="date"/>
+        <property name="fullAutoComplete" value="false"/>
     </bean>
 
     <bean id="searchFilterIssued" class="org.dspace.discovery.configuration.DiscoverySearchFilter">
@@ -149,43 +189,48 @@
         <property name="fullAutoComplete" value="true"/>
     </bean>
 
-
-    <!--Sidebar facet configuration beans-->
-    <bean id="sidebarFacetAuthor" class="org.dspace.discovery.configuration.SidebarFacetConfiguration">
-        <property name="indexFieldName" value="author"/>
+    <bean id="searchFilterJournalName" class="org.dspace.discovery.configuration.DiscoverySearchFilter">
+        <property name="indexFieldName" value="journalName"/>
         <property name="metadataFields">
             <list>
-                <value>dc.contributor.author</value>
-                <!-- <value>heal.creatorName</value> -->
-                <value>heal.advisorName</value>
-                <value>heal.committeeMemberName</value>
+                <value>heal.journalName</value>
             </list>
         </property>
-        <property name="facetLimit" value="10"/>
-        <property name="sortOrder" value="COUNT"/>
+        <property name="fullAutoComplete" value="false"/>
     </bean>
 
+    <bean id="searchFilterAbstract" class="org.dspace.discovery.configuration.DiscoverySearchFilter">
+        <property name="indexFieldName" value="abstract"/>
+        <property name="metadataFields">
+            <list>
+                <value>heal.abstract</value>
+            </list>
+        </property>
+        <property name="fullAutoComplete" value="false"/>
+    </bean>
+
+    <bean id="searchFilterLanguage" class="org.dspace.discovery.configuration.DiscoverySearchFilter">
+        <property name="indexFieldName" value="language"/>
+        <property name="metadataFields">
+            <list>
+                <value>heal.language</value>
+            </list>
+        </property>
+        <property name="fullAutoComplete" value="false"/>
+    </bean>
+
+
+    <!--Sidebar facet configuration beans-->
     <bean id="sidebarFacetSubject" class="org.dspace.discovery.configuration.SidebarFacetConfiguration">
         <property name="indexFieldName" value="subject"/>
         <property name="metadataFields">
             <list>
-                <value>dc.subject.*</value>
-                <!-- <value>heal.keyword.*</value> -->
+                <value>heal.classification.*</value>
+                <!--<value>dc.subject.*</value>-->
             </list>
         </property>
-        <property name="facetLimit" value="10"/>
+        <property name="facetLimit" value="5"/>
         <property name="sortOrder" value="COUNT"/>
-    </bean>
-
-    <bean id="sidebarFacetDateIssued" class="org.dspace.discovery.configuration.SidebarFacetConfiguration">
-        <property name="indexFieldName" value="dateIssued"/>
-        <property name="metadataFields">
-            <list>
-                <value>dc.date.issued</value>
-            </list>
-        </property>
-        <property name="type" value="date"/>
-        <property name="sortOrder" value="VALUE"/>
     </bean>
 
     <bean id="sidebarFacetType" class="org.dspace.discovery.configuration.SidebarFacetConfiguration">
@@ -195,10 +240,49 @@
                 <value>heal.type</value>
             </list>
         </property>
-        <property name="facetLimit" value="10"/>
+        <property name="facetLimit" value="5"/>
         <property name="sortOrder" value="COUNT"/>
     </bean>
 
+    <bean id="sidebarFacetAuthor" class="org.dspace.discovery.configuration.SidebarFacetConfiguration">
+        <property name="indexFieldName" value="author"/>
+        <property name="metadataFields">
+            <list>
+                <value>dc.contributor.author</value>
+                <!-- <value>heal.creatorName</value>
+                <value>heal.advisorName</value>
+                <value>heal.committeeMemberName</value>
+                <value>heal.contributorName</value> -->
+            </list>
+        </property>
+        <property name="facetLimit" value="5"/>
+        <property name="sortOrder" value="COUNT"/>
+    </bean>
+
+    <bean id="sidebarFacetJournalName" class="org.dspace.discovery.configuration.SidebarFacetConfiguration">
+        <property name="indexFieldName" value="journalName"/>
+        <property name="metadataFields">
+            <list>
+                <value>heal.journalName</value>
+            </list>
+        </property>
+        <property name="facetLimit" value="5"/>
+        <property name="sortOrder" value="COUNT"/>
+    </bean>
+
+    <bean id="sidebarFacetDatePublished" class="org.dspace.discovery.configuration.SidebarFacetConfiguration">
+        <property name="indexFieldName" value="datePublished"/>
+        <property name="metadataFields">
+            <list>
+                <!--<value>dc.date.issued</value>-->
+                <value>heal.publicationDate</value>
+                <value>heal.dateCreated</value>
+            </list>
+        </property>
+        <property name="type" value="date"/>
+        <property name="facetLimit" value="5"/>
+        <property name="sortOrder" value="VALUE"/>
+    </bean>
 
     <!--Sort properties-->
     <bean id="sortTitle" class="org.dspace.discovery.configuration.DiscoverySortFieldConfiguration">

@@ -6,19 +6,18 @@
 # {3}  Description of task
 # {4}  link to 'my DSpace' page 
 #
-Subject: DSpace: You have a new task
+Subject: Υπατία: Νέα Εργασία
 
-A new item has been submitted:
+Ένα νέο αντικείμενο υποβλήθηκε:
 
-Title:        {0}
-Collection:   {1}
-Submitted by: {2}
+Τίτλος:       {0}
+Συλλογή:      {1}
+Υποβολή από:  {2}
 
 {3}
 
-To claim this task, please visit your "My DSpace"
-page:  {4}
+Για να αναλάβετε αυτή την εργασία, παρακαλώ επισκεφτείτε τη σελίδα: {4}
 
-Many thanks!
+Σας ευχαριστούμε!
 
-DSpace
+Υπατία, Ιδρυματικό Αποθετήριο του ΤΕΙ Αθήνας

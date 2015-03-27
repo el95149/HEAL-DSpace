@@ -37,6 +37,7 @@
       <module>dspace-xmlui-webapp</module>
       <module>dspace-heal-xmlui-api</module>
       <module>dspace-heal-xmlui-webapp</module>
+      <module>dspace-myir</module>
    </modules>
 
 </project>

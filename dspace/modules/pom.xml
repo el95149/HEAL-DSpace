@@ -1,25 +1,25 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.dspace</groupId>
-	<artifactId>modules</artifactId>
-	<packaging>pom</packaging>
-	<name>DSpace Addon Modules</name>
-	<url>http://www.dspace.org</url>
-	<description>DSpace Addon Modules</description>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.dspace</groupId>
+    <artifactId>modules</artifactId>
+    <packaging>pom</packaging>
+    <name>DSpace Addon Modules</name>
+    <url>http://www.dspace.org</url>
+    <description>DSpace Addon Modules</description>
 
-	<parent>
-		<groupId>org.dspace</groupId>
-		<artifactId>dspace-parent</artifactId>
-		<version>1.8.2</version>
-		<relativePath>../../pom.xml</relativePath>
-	</parent>
+    <parent>
+        <groupId>org.dspace</groupId>
+        <artifactId>dspace-parent</artifactId>
+        <version>1.8.2</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
 
     <scm>
-      <connection>scm:svn:https://scm.dspace.org/svn/repo/tags/dspace-1.8.2</connection>
-      <developerConnection>scm:svn:https://scm.dspace.org/svn/repo/tags/dspace-1.8.2</developerConnection>
-      <url>http://scm.dspace.org/svn/repo/tags/dspace-1.8.2</url>
+        <connection>scm:svn:https://scm.dspace.org/svn/repo/tags/dspace-1.8.2</connection>
+        <developerConnection>scm:svn:https://scm.dspace.org/svn/repo/tags/dspace-1.8.2</developerConnection>
+        <url>http://scm.dspace.org/svn/repo/tags/dspace-1.8.2</url>
     </scm>
-    
+
     <!-- 
          List of enabled DSpace Modules to build/install.
          To disable building of modules, you can use the Maven '-P' commandline 
@@ -35,15 +35,15 @@
         <profile>
             <id>dspace-xmlui</id>
             <activation>
-            <!-- modified by aanagnostopoulos: disabled default XMLUI -->
+                <!-- modified by aanagnostopoulos: disabled default XMLUI -->
                 <activeByDefault>false</activeByDefault>
-			<!-- END: aanagnostopoulos -->
+                <!-- END: aanagnostopoulos -->
             </activation>
             <modules>
                 <module>xmlui</module>
             </modules>
         </profile>
-       <!-- modified by aanagnostopoulos: added HEAL specific XMLUI -->
+        <!-- modified by aanagnostopoulos: added HEAL specific XMLUI -->
         <profile>
             <id>dspace-heal-xmlui</id>
             <activation>
@@ -72,7 +72,7 @@
                 <module>oai</module>
             </modules>
         </profile>
-       <!-- modified by aanagnostopoulos: disabled JSPUI -->
+        <!-- modified by aanagnostopoulos: disabled JSPUI -->
         <profile>
             <id>dspace-jspui</id>
             <activation>

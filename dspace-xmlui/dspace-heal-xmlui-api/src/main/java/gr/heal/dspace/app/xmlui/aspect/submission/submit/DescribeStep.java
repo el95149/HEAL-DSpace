@@ -809,7 +809,7 @@ public class DescribeStep extends AbstractSubmissionStep
                 {
                     qualdrop.enableDeleteOperation();
                 }
-                
+
                 if (readonly)
                 {
                     qualdrop.setDisabled();

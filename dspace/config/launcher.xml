@@ -346,6 +346,12 @@
 			<class>org.dspace.discovery.IndexClient</class>
 		</step>
 	</command>
-
+    <command>
+        <name>user</name>
+        <description>Manipulate a normal user account</description>
+        <step>
+            <class>gr.heal.dspace.eperson.EPersonCommand</class>
+        </step>
+    </command>
 
 </commands>

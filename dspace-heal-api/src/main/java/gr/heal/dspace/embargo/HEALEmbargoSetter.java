@@ -23,6 +23,7 @@ import org.dspace.core.ConfigurationManager;
 import org.dspace.core.Constants;
 import org.dspace.core.Context;
 import org.dspace.embargo.DefaultEmbargoSetter;
+import org.dspace.embargo.EmbargoManager;
 import org.dspace.eperson.Group;
 import org.dspace.license.CreativeCommons;
 
@@ -57,7 +58,13 @@ public class HEALEmbargoSetter extends DefaultEmbargoSetter {
 				calendar.add(Calendar.MONTH, Integer.parseInt(termsOpen));
 				return new DCDate(calendar.getTime());
 
-			} else if (terms.equals("account")) {
+			} 
+            // modified by imc
+            else if (terms.equals("forever"))
+            {
+                return EmbargoManager.FOREVER;
+            }
+            else if (terms.equals("account")) {
 				// only allow logged in users (i.e members of 'authenticated' group)
 				Group group = Group.findByName(context, authenticatedGroupName);
 				if (group != null) {
@@ -88,13 +95,13 @@ public class HEALEmbargoSetter extends DefaultEmbargoSetter {
 				//TODO: implement IP based access
 				return null;
 			}else if(terms.equals("free")) {
-				//always set heal.dateAvailable, since HEAL-meta XSD requires it 
+				//always set heal.dateAvailable, since HEAL-meta XSD requires it
 				DCValue[] dateAvailable = item.getMetadata(MetadataSchema.DC_SCHEMA, "date", "available", null);
 				DCDate date = null;
 				if(dateAvailable.length>0) {
 					date = new DCDate(dateAvailable[0].value);
 				}
-				
+
 				return date;
 			}
 		}

@@ -5,14 +5,14 @@
 #
 # See org.dspace.core.Email for information on the format of this file.
 #
-Subject: DSpace - Item export requested is ready for download
-The item export you requested from the repository is now ready for download.
+Subject: Υπατία - Αίτημα εξαγωγής αντικειμένου
+Η εξαγωγή του αντικειμένου που ζητήσατε από το αποθετήριο ολοκληρώθηκε και είναι έτοιμη για κατέβασμα.
 
-You may download the compressed file using the following link:
+Μπορείτε να κατεβάσετε το συμπιεσμένο αρχείο χρησιμοποιώντας τον παρακάτω σύνδεσμο:
 {0}
 
-This file will remain available for at least {1} hours.  
+Το αρχείο αυτό θα παραμείνει διαθέσιμο για τουλάχιστον {1} ώρα/ες.
 
 
-The DSpace Team
+Υπατία, Ιδρυματικό Αποθετήριο του ΤΕΙ Αθήνας
 

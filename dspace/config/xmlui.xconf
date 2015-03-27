@@ -87,6 +87,9 @@
             it helps a theme developer create themes 
         -->
         <!-- <aspect name="XML Tests" path="resource://aspects/XMLTest/"/> -->
+
+        <!-- MyIR -->
+        <aspect name="My IR" path="resource://aspects/MyIR/" />
     </aspects>
 
     <!--
@@ -125,12 +128,14 @@
 
         <!-- Mirage theme, @mire contribution of new theme to support easier development and branding -->
         <!-- <theme name="Atmire Mirage Theme" regex=".*" path="Mirage/" /> -->
-		<theme name="HEAL Theme" regex=".*" path="Heal/" />
+		<!-- <theme name="HEAL Theme" regex=".*" path="Heal/" /> -->
         <!-- Classic theme, inspired by the JSP UI -->
         <!-- <theme name="Classic" regex=".*" path="Classic/" /> -->
 
         <!-- Table based browse display -->
         <!-- <theme name="Table Theme" regex=".*" path="TableTheme/" /> -->
 
+        <!-- IMC Themes -->
+        <theme name="TeiA Theme" regex=".*" path="TeiA/" />
     </themes>
 </xmlui>

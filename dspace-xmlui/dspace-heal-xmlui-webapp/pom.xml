@@ -76,7 +76,8 @@
 			</activation>
 			<build>
 				<filters>
-					<filter>${dspace.config}</filter>
+                    <!--<filter>E:/idea12_projects/dspaceTEI/dspace/config/dspace.cfg</filter>-->
+                    <filter>${basedir}/../../dspace/config/dspace.cfg</filter>
 				</filters>
 			</build>
 		</profile>
@@ -148,7 +149,14 @@
 			<type>war</type>
 		</dependency>
 
-	</dependencies>
+        <!-- external -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
 	<properties>
 		<netbeans.hint.deploy.server>Tomcat</netbeans.hint.deploy.server>
 	</properties>
