@@ -599,6 +599,7 @@
                                         <map:transform src="exception2html.xslt">
                                                 <map:parameter name="contextPath" value="{request:contextPath}"/>
                                                 <map:parameter name="pageTitle" value="Resource not found"/>
+                                                <map:parameter name="statusCode" value="404"/>
                                         </map:transform>
                                         <map:act type="locale">
                                             <map:transform type="i18n">
@@ -613,6 +614,7 @@
                                         <map:transform src="exception2html.xslt">
                                                 <map:parameter name="contextPath" value="{request:contextPath}"/>
                                                 <map:parameter name="pageTitle" value="Your Session has Expired"/>
+                                                <map:parameter name="statusCode" value="404"/>
                                         </map:transform>
                                         <map:act type="locale">
                                             <map:transform type="i18n">
@@ -626,6 +628,7 @@
                                         <map:generate type="exception"/>
                                         <map:transform src="exception2html.xslt">
                                                 <map:parameter name="contextPath" value="{request:contextPath}"/>
+                                                <map:parameter name="statusCode" value="500"/>
                                         </map:transform>
                                         <map:act type="locale">
                                             <map:transform type="i18n">

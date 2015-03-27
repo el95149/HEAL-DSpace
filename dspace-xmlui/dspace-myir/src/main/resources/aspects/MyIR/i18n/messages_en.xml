@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!--
+
+    The contents of this file are subject to the license and copyright
+    detailed in the LICENSE and NOTICE files at the root of the source
+    tree and available online at
+
+    http://www.dspace.org/license/
+
+-->
+<catalogue xml:lang="en" xmlns:i18n="http://apache.org/cocoon/i18n/2.1" xmlns="http://apache.org/cocoon/i18n/2.1">
+
+    <message key="xmlui.MyIR.untitled"><i>Untitled</i></message>
+
+    <!-- Favorites -->
+    <message key="xmlui.MyIR.Favorites.title">My Favorites</message>
+    <message key="xmlui.MyIR.Favorites.trail">My Favorites</message>
+    <message key="xmlui.MyIR.Favorites.head">My Favorites</message>
+    <message key="xmlui.MyIR.Favorites.email">email: </message>
+    <message key="xmlui.MyIR.Favorites.info">These are the items you have bookmarked in Hypatia.</message>
+    <message key="xmlui.MyIR.Favorites.no.results">Currently you have no favorites.</message>
+    <message key="xmlui.MyIR.Favorites.column1">Date added</message>
+    <message key="xmlui.MyIR.Favorites.column2">Title</message>
+    <message key="xmlui.MyIR.Favorites.column3">Collection</message>
+    <message key="xmlui.MyIR.Favorites.limit">We've only listed 50 of your favorites above. </message>
+    <message key="xmlui.MyIR.Favorites.remove">Remove</message>
+    <message key="xmlui.MyIR.Favorites.displayall">Display all my favorites.</message>
+    <message key="xmlui.MyIR.Favorites.add">Favorites</message>
+    <message key="xmlui.MyIR.Favorites.total.results">Total items: <strong>{0}</strong></message>
+
+    <!-- Authorship -->
+    <message key="xmlui.MyIR.Authorship.title">Personal Production</message>
+    <message key="xmlui.MyIR.Authorship.trail">Personal Production</message>
+    <message key="xmlui.MyIR.Authorship.head">Items of Personal Production</message>
+    <message key="xmlui.MyIR.Authorship.disclaimer">Add this item to your personal production only if you are its author/creator or if you have contributed to its creation.</message>
+    <message key="xmlui.MyIR.Authorship.info">These are the items you have saved in your personal production in Hypatia.</message>
+    <message key="xmlui.MyIR.Authorship.no.results">You have not saved items in your personal production.</message>
+    <message key="xmlui.MyIR.Favorites.limit">Now showing only the first 50 of your items above. </message>
+    <message key="xmlui.MyIR.Authorship.item.available">This item belongs to your personal production</message>
+    <message key="xmlui.MyIR.Authorship.add">Add to Personal Production</message>
+    <message key="xmlui.MyIR.Authorship.add.short">Add to Personal Production</message>
+    <message key="xmlui.MyIR.Authorship.remove">Remove from Personal Production</message>
+    <message key="xmlui.MyIR.Authorship.remove.short">Remove</message>
+    <message key="xmlui.MyIR.Authorship.displayall">Display all my favorites.</message>
+    <message key="xmlui.MyIR.Authorship.total.results">Total items: <strong>{0}</strong></message>
+    <message key="xmlui.MyIR.Authorship.column1">Title</message>
+    <message key="xmlui.MyIR.Authorship.column2">Collection</message>
+
+    <!-- Academic Interests -->
+    <message key="xmlui.MyIR.AcademicInterests.title">My Academic Interests</message>
+    <message key="xmlui.MyIR.AcademicInterests.trail">My Academic Interests</message>
+    <message key="xmlui.MyIR.AcademicInterests.head">My Academic Interests</message>
+    <message key="xmlui.MyIR.AcademicInterests.info">These are the academic interest terms you have inserted in Hypatia.</message>
+
+    <message key="xmlui.MyIR.AcademicInterests.no.results">Currently you have not saved any academic interests.</message>
+    <message key="xmlui.MyIR.AcademicInterests.column2">Title</message>
+    <message key="xmlui.MyIR.AcademicInterests.column3">RSS Feed related items</message>
+    <message key="xmlui.MyIR.AcademicInterests.limit">We've only listed 50 of your interests above. </message>
+    <message key="xmlui.MyIR.AcademicInterests.remove">Remove</message>
+    <message key="xmlui.MyIR.AcademicInterests.displayall">Display all my academic interests.</message>
+
+    <message key="xmlui.MyIR.AcademicInterests.no.results">Currently you have no academic interests.</message>
+    <message key="xmlui.MyIR.AcademicInterests.column2">Title</message>
+    <message key="xmlui.MyIR.AcademicInterests.column3">RSS Feed related items</message>
+    <message key="xmlui.MyIR.AcademicInterests.limit">We've only listed 50 of your interests above. </message>
+    <message key="xmlui.MyIR.AcademicInterests.remove">Remove</message>
+    <message key="xmlui.MyIR.AcademicInterests.add">Add</message>
+    <message key="xmlui.MyIR.AcademicInterests.displayall">Display all my academic interests.</message>
+
+    <message key="xmlui.MyIR.AcademicInterests.addterm">Add Term</message>
+    <message key="xmlui.MyIR.AcademicInterests.addtermhint">Insert a technical term related with your Academic Interests</message>
+    <message key="xmlui.MyIR.AcademicInterests.addinterest">Add an Academic Interest</message>
+    <message key="xmlui.MyIR.AcademicInterests.total.results">Total terms: <strong>{0}</strong></message>
+
+    <!-- Profile -->
+    <message key="xmlui.MyIR.Profile.generic.profile">User Profile</message>
+    <message key="xmlui.MyIR.Profile.owner.private.warning">Your profile is currently not public and only visible to you.</message>
+    <message key="xmlui.MyIR.Profile.no.access">Υου have no access to this user profile.</message>
+    <message key="xmlui.MyIR.Profile.email">E-mail</message>
+    <message key="xmlui.MyIR.Profile.affiliation">Affiliation</message>
+    <message key="xmlui.MyIR.Profile.profession">Profession</message>
+    <message key="xmlui.MyIR.Profile.website">Page URL</message>
+    <message key="xmlui.MyIR.Profile.set.public">Enable Public Profile</message>
+    <message key="xmlui.MyIR.Profile.set.public.yes">Yes, make my profile visible to others</message>
+    <message key="xmlui.MyIR.Profile.set.public.no">No</message>
+    <message key="xmlui.MyIR.Profile.academic.interests">Academic Interests</message>
+    <message key="xmlui.MyIR.Profile.collections_subscriptions">Collections of Interest</message>
+    <message key="xmlui.MyIR.Profile.authored_items">Items of Personal Production</message>
+    <message key="xmlui.MyIR.EditProfile.title_update">My Account: Update Profile</message>
+    <message key="xmlui.MyIR.EditProfile.head_update">My Account: Update Profile</message>
+
+    <!-- Profile search -->
+    <message key="xmlui.administrative.eperson.myir.SearchEPeopleMain.title">Search User Profiles</message>
+    <message key="xmlui.administrative.eperson.myir.search_epeople_trail">Search User Profiles</message>
+    <message key="xmlui.administrative.eperson.myir.SearchEPeopleMain.main_head">Search User Profiles</message>
+    <message key="xmlui.administrative.eperson.myir.SearchEPeopleMain.actions_search">Search for</message>
+    <message key="xmlui.administrative.eperson.myir.SearchEPeopleMain.search_help">Search in name, profession, affiliation and academic interests</message>
+    <message key="xmlui.administrative.eperson.myir.SearchEPeopleMain.search_column1">Name</message>
+</catalogue>

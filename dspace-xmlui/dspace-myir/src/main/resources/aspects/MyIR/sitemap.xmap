@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    The contents of this file are subject to the license and copyright
+    detailed in the LICENSE and NOTICE files at the root of the source
+    tree and available online at
+
+    http://www.dspace.org/license/
+
+-->
+
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+    <map:components>
+
+        <map:transformers>
+            <map:transformer name="MyFavorites" src="com.imc.dspace.app.xmlui.aspect.myir.MyFavorites" />
+            <map:transformer name="MyAuthored" src="com.imc.dspace.app.xmlui.aspect.myir.MyAuthored" />
+            <map:transformer name="MyInterests" src="com.imc.dspace.app.xmlui.aspect.myir.MyAcademicInterests" />
+            <map:transformer name="EPersonProfile" src="com.imc.dspace.app.xmlui.aspect.myir.PublicProfile" />
+            <map:transformer name="SearchProfile" src="com.imc.dspace.app.xmlui.aspect.myir.SearchEPeopleMain" />
+        </map:transformers>
+
+        <map:actions>
+            <map:action name="RemoveFavoritesAction" src="com.imc.dspace.app.xmlui.aspect.myir.RemoveFavoritesAction"/>
+            <map:action name="RemoveAuthoredAction" src="com.imc.dspace.app.xmlui.aspect.myir.RemoveAuthoredAction"/>
+            <map:action name="RemoveInterestsAction" src="com.imc.dspace.app.xmlui.aspect.myir.RemoveInterestsAction"/>
+            <map:action name="AddInterestsAction" src="com.imc.dspace.app.xmlui.aspect.myir.AddInterestsAction"/>
+        </map:actions>
+
+        <map:selectors>
+            <map:selector name="AuthenticatedSelector" src="org.dspace.app.xmlui.aspect.general.AuthenticatedSelector"/>
+        </map:selectors>
+
+    </map:components>
+
+    <map:pipelines>
+
+        <map:pipeline type="noncaching">
+            <!-- Make sure the user is at least logged in -->
+            <map:select type="AuthenticatedSelector">
+                <map:when test="eperson">
+
+                    <map:generate/>
+
+                    <map:match pattern="user/*">
+                        <map:transform type="EPersonProfile">
+                            <map:parameter name="epersonId" value="{1}"/>
+                        </map:transform>
+                        <map:serialize type="xml"/>
+                    </map:match>
+
+                    <map:match pattern="favorites">
+                        <map:match type="request" pattern="submit_favorites_remove">
+                            <map:act type="RemoveFavoritesAction"/>
+                        </map:match>
+
+                        <map:transform type="MyFavorites"/>
+                        <map:serialize type="xml"/>
+                    </map:match>
+
+                    <map:match pattern="production">
+                        <map:match type="request" pattern="submit_authored_remove">
+                            <map:act type="RemoveAuthoredAction"/>
+                        </map:match>
+
+                        <map:transform type="MyAuthored"/>
+                        <map:serialize type="xml"/>
+                    </map:match>
+
+                    <map:match pattern="interests">
+                        <map:match type="request" pattern="submit_interests_remove">
+                            <map:act type="RemoveInterestsAction"/>
+                        </map:match>
+                        <map:match type="request" pattern="submit_interest_add">
+                            <map:act type="AddInterestsAction"/>
+                        </map:match>
+                        <map:transform type="MyInterests"/>
+                        <map:serialize type="xml"/>
+                    </map:match>
+                    <map:match pattern="profilesearch">
+                        <map:transform type="SearchProfile">
+                        <map:parameter name="query" value="{flow-attribute:query}"/>
+                        		        				<map:parameter name="page" value="{flow-attribute:page}"/>
+                        		        				<map:parameter name="highlightID" value="{flow-attribute:highlightID}"/>
+                        </map:transform>
+                        <map:serialize type="xml"/>
+                    </map:match>
+                    <map:serialize type="xml"/>
+
+                </map:when>
+
+                <map:otherwise>
+
+                    <map:generate/>
+
+                    <map:match pattern="user/*">
+                        <map:transform type="EPersonProfile">
+                            <map:parameter name="epersonId" value="{1}"/>
+                        </map:transform>
+                        <map:serialize type="xml"/>
+                    </map:match>
+
+                    <map:match pattern="favorites">
+                        <!-- non-authenticated users -->
+                        <map:act type="StartAuthentication"/>
+                    </map:match>
+
+                    <map:match pattern="production">
+                        <!-- non-authenticated users -->
+                        <map:act type="StartAuthentication"/>
+                    </map:match>
+
+                    <map:match pattern="interests">
+                        <!-- non-authenticated users -->
+                        <map:act type="StartAuthentication"/>
+                    </map:match>
+
+                    <map:match pattern="profilesearch">
+                        <map:transform type="SearchProfile">
+                            <map:parameter name="query" value="{flow-attribute:query}"/>
+                            <map:parameter name="page" value="{flow-attribute:page}"/>
+                            <map:parameter name="highlightID" value="{flow-attribute:highlightID}"/>
+                        </map:transform>
+                        <map:serialize type="xml"/>
+                    </map:match>
+
+                    <map:serialize/>
+
+                </map:otherwise>
+            </map:select>
+        </map:pipeline>
+
+    </map:pipelines>
+</map:sitemap>

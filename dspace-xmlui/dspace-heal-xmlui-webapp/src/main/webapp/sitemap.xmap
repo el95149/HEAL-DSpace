@@ -384,8 +384,13 @@
                         <map:match pattern="JSON/rdf/**">
                             <map:mount check-reload="no" src="aspects/json-rdf.xmap" uri-prefix="JSON/rdf/"/>
                         </map:match>
-
 						<!-- END aanagnostopoulos -->
+
+                        <!-- modified by imc -->
+						<map:match pattern="myir/**">
+                            <map:mount check-reload="no" src="aspects/MyIR/handler.xmap" uri-prefix="myir/"/>
+                        </map:match>
+                        <!-- END imc -->
 
                 </map:pipeline>
 

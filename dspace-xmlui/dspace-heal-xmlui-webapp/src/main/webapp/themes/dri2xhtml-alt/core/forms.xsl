@@ -247,7 +247,12 @@
                     both columns of the list. -->
             </xsl:otherwise>
         </xsl:choose>
-        <xsl:if test="dri:field/@required='yes'"><span style="color:red">*</span></xsl:if>
+        <xsl:variable name="field-id" select="./dri:field/@id"/>
+        <xsl:if test="starts-with($field-id,'aspect.submission.')">
+            <xsl:if test="dri:field/@required='yes'">
+                <span style="color:#C22121">*</span>
+            </xsl:if>
+        </xsl:if>
     </xsl:template>
 
     <xsl:template match="dri:list[@type='form']/dri:label" priority="3">
@@ -853,11 +858,13 @@
         <xsl:variable name="confidenceIndicatorID" select="concat(translate(@id,'.','_'),'_confidence_indicator')"/>
         <xsl:choose>
             <!-- TODO: this has changed drammatically (see form3.xml) -->
-                        <xsl:when test="@type= 'select'">
-                                <select>
+            <xsl:when test="@type= 'select'">
+                           <!-- <div class="col-md-4"> -->
+                            <select>
                                     <xsl:call-template name="fieldAttributes"/>
                                     <xsl:apply-templates/>
                                 </select>
+                           <!-- </div>   -->
                         </xsl:when>
             <xsl:when test="@type= 'textarea'">
 								<!-- modified by aanagnostopoulos -->
@@ -1006,10 +1013,12 @@
 	                            </xsl:if>
 	                            <xsl:apply-templates />
 	                        </input>
-							<xsl:if test="dri:label">
-								  <br/>
-								  <xsl:apply-templates select="dri:label" mode="compositeComponent"/>
-							</xsl:if>
+                            <!-- modified IMC: dont display label as hint under onebox fields -->
+                            <xsl:if test="dri:label and ../../dri:field[@rend!='submit-text']">
+                                <br/>
+                                <xsl:apply-templates select="dri:label" mode="compositeComponent"/>
+                            </xsl:if>
+                            <!-- end IMC -->
                         </label>
                         </xsl:when>
 						<xsl:otherwise>                    
@@ -1083,6 +1092,9 @@
                 <xsl:if test="dri:error">
                     <xsl:text>error </xsl:text>
                 </xsl:if>
+                <xsl:text>
+
+                </xsl:text>
             </xsl:with-param>
         </xsl:call-template>
         <xsl:if test="@disabled='yes'">

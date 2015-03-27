@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+	<responseDate>2013-01-31T09:58:10Z</responseDate>
+	<request metadataPrefix="marc" verb="ListRecords">http://localhost:8080/oai/request</request>
+	<ListRecords>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/3</identifier>
+				<datestamp>2012-06-07T12:16:16Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<record xmlns="http://www.loc.gov/MARC21/slim" xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+					<leader>      am         3u     </leader>
+					<datafield ind2=" " ind1=" " tag="042">
+						<subfield code="a">dc</subfield>
+					</datafield>
+					<datafield ind2=" " ind1=" " tag="260">
+						<subfield code="c">2012-06-07T08:42:46Z</subfield>
+					</datafield>
+					<datafield ind2=" " ind1="8" tag="024">
+						<subfield code="a">http://hdl.handle.net/123456789/3</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">Δοκιμαστική μεταπτυχιακή</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">Δοκιμαστική μεταπτυχιακή</subfield>
+					</datafield>
+					<datafield ind2="3" ind1="3" tag="246">
+						<subfield code="a">Δοκιμαστική μεταπτυχιακή</subfield>
+					</datafield>
+				</record>
+			</metadata>
+		</record>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/4</identifier>
+				<datestamp>2012-06-07T12:16:16Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<record xmlns="http://www.loc.gov/MARC21/slim" xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+					<leader>      am         3u     </leader>
+					<datafield ind2=" " ind1=" " tag="042">
+						<subfield code="a">dc</subfield>
+					</datafield>
+					<datafield ind2=" " ind1=" " tag="260">
+						<subfield code="c">2012-06-07T11:55:58Z</subfield>
+					</datafield>
+					<datafield ind2=" " ind1="8" tag="024">
+						<subfield code="a">http://hdl.handle.net/123456789/4</subfield>
+					</datafield>
+					<datafield ind2=" " ind1=" " tag="653">
+						<subfield code="a">Spain--History--Civil War, 1936-1939--Participation, American (Source: http://id.loc.gov/au...bjects/sh2010113615)</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">Διδακτορικό 1</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">Διδακτορικό 1</subfield>
+					</datafield>
+					<datafield ind2="3" ind1="3" tag="246">
+						<subfield code="a">Διδακτορικό 1</subfield>
+					</datafield>
+				</record>
+			</metadata>
+		</record>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/5</identifier>
+				<datestamp>2012-06-07T12:16:19Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<record xmlns="http://www.loc.gov/MARC21/slim" xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+					<leader>      am         3u     </leader>
+					<datafield ind2=" " ind1=" " tag="042">
+						<subfield code="a">dc</subfield>
+					</datafield>
+					<datafield ind2=" " ind1=" " tag="260">
+						<subfield code="c">2012-06-07T12:06:47Z</subfield>
+					</datafield>
+					<datafield ind2=" " ind1="8" tag="024">
+						<subfield code="a">http://hdl.handle.net/123456789/5</subfield>
+					</datafield>
+					<datafield ind2=" " ind1=" " tag="653">
+						<subfield code="a">Arabic language--Religious aspects--Islam (Source: http://id.loc.gov/au...bjects/sh2009115230)</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">Test</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">Test</subfield>
+					</datafield>
+					<datafield ind2="3" ind1="3" tag="246">
+						<subfield code="a">Test</subfield>
+					</datafield>
+				</record>
+			</metadata>
+		</record>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/6</identifier>
+				<datestamp>2012-06-08T06:34:01Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<record xmlns="http://www.loc.gov/MARC21/slim" xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+					<leader>      am         3u     </leader>
+					<datafield ind2=" " ind1=" " tag="042">
+						<subfield code="a">dc</subfield>
+					</datafield>
+					<datafield ind2=" " ind1=" " tag="260">
+						<subfield code="c">2012-06-08T06:33:04Z</subfield>
+					</datafield>
+					<datafield ind2=" " ind1="8" tag="024">
+						<subfield code="a">http://hdl.handle.net/123456789/6</subfield>
+					</datafield>
+					<datafield ind2=" " ind1=" " tag="653">
+						<subfield code="a">Cannibalism in motion pictures (Source: http://id.loc.gov/au...subjects/sh00007287)</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">Κι άλλη δοκιμή</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">Κι άλλη δοκιμή</subfield>
+					</datafield>
+					<datafield ind2="3" ind1="3" tag="246">
+						<subfield code="a">Κι άλλη δοκιμή</subfield>
+					</datafield>
+				</record>
+			</metadata>
+		</record>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/7</identifier>
+				<datestamp>2012-06-08T06:58:53Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<record xmlns="http://www.loc.gov/MARC21/slim" xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+					<leader>      am         3u     </leader>
+					<datafield ind2=" " ind1=" " tag="042">
+						<subfield code="a">dc</subfield>
+					</datafield>
+					<datafield ind2=" " ind1=" " tag="260">
+						<subfield code="c">2012-06-08T06:58:49Z</subfield>
+					</datafield>
+					<datafield ind2=" " ind1="8" tag="024">
+						<subfield code="a">http://hdl.handle.net/123456789/7</subfield>
+					</datafield>
+					<datafield ind2=" " ind1=" " tag="653">
+						<subfield code="a">Carambola (Source: http://id.loc.gov/au...subjects/sh94004375)</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">Κεφάλαιο Βιβλίου 1</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">Κεφάλαιο Βιβλίου 1</subfield>
+					</datafield>
+					<datafield ind2="3" ind1="3" tag="246">
+						<subfield code="a">Κεφάλαιο Βιβλίου 1</subfield>
+					</datafield>
+				</record>
+			</metadata>
+		</record>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/8</identifier>
+				<datestamp>2012-06-13T17:45:39Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<record xmlns="http://www.loc.gov/MARC21/slim" xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+					<leader>      am         3u     </leader>
+					<datafield ind2=" " ind1=" " tag="042">
+						<subfield code="a">dc</subfield>
+					</datafield>
+					<datafield ind2=" " ind1=" " tag="260">
+						<subfield code="c">2012-06-11T08:30:54Z</subfield>
+					</datafield>
+					<datafield ind2=" " ind1="8" tag="024">
+						<subfield code="a">http://hdl.handle.net/123456789/8</subfield>
+					</datafield>
+					<datafield ind2=" " ind1=" " tag="653">
+						<subfield code="a">Indian journalists (Source: http://id.loc.gov/au...subjects/sh96004108)</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">Yet another phd</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">Yet another phd</subfield>
+					</datafield>
+					<datafield ind2="3" ind1="3" tag="246">
+						<subfield code="a">Yet another phd</subfield>
+					</datafield>
+				</record>
+			</metadata>
+		</record>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/9</identifier>
+				<datestamp>2012-06-13T18:16:58Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<record xmlns="http://www.loc.gov/MARC21/slim" xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+					<leader>      am         3u     </leader>
+					<datafield ind2=" " ind1=" " tag="042">
+						<subfield code="a">dc</subfield>
+					</datafield>
+					<datafield ind2=" " ind1=" " tag="260">
+						<subfield code="c">2012-06-13T18:16:58Z</subfield>
+					</datafield>
+					<datafield ind2=" " ind1="8" tag="024">
+						<subfield code="a">http://hdl.handle.net/123456789/9</subfield>
+					</datafield>
+					<datafield ind2=" " ind1=" " tag="653">
+						<subfield code="a">Theology (Source: http://id.loc.gov/au...bjects/sh2001008984)</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">Just a master!</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">Just a master!</subfield>
+					</datafield>
+					<datafield ind2="3" ind1="3" tag="246">
+						<subfield code="a">Just a master!</subfield>
+					</datafield>
+				</record>
+			</metadata>
+		</record>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/10</identifier>
+				<datestamp>2012-06-14T10:34:12Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<record xmlns="http://www.loc.gov/MARC21/slim" xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+					<leader>      am         3u     </leader>
+					<datafield ind2=" " ind1=" " tag="042">
+						<subfield code="a">dc</subfield>
+					</datafield>
+					<datafield ind2=" " ind1=" " tag="260">
+						<subfield code="c">2012-06-14T08:24:36Z</subfield>
+					</datafield>
+					<datafield ind2=" " ind1="8" tag="024">
+						<subfield code="a">http://hdl.handle.net/123456789/10</subfield>
+					</datafield>
+					<datafield ind2=" " ind1=" " tag="653">
+						<subfield code="a">American literature--20th century--Bibliography (Source: http://id.loc.gov/au...bjects/sh2009114790)</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">Δοκιμαστικό Βιβλίο epub</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">Δοκιμαστικό Βιβλίο epub</subfield>
+					</datafield>
+					<datafield ind2="3" ind1="3" tag="246">
+						<subfield code="a">Δοκιμαστικό Βιβλίο epub</subfield>
+					</datafield>
+				</record>
+			</metadata>
+		</record>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/11</identifier>
+				<datestamp>2012-06-26T07:41:02Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<record xmlns="http://www.loc.gov/MARC21/slim" xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+					<leader>      am         3u     </leader>
+					<datafield ind2=" " ind1=" " tag="042">
+						<subfield code="a">dc</subfield>
+					</datafield>
+					<datafield ind2=" " ind1=" " tag="260">
+						<subfield code="c">2012-06-26T07:41:02Z</subfield>
+					</datafield>
+					<datafield ind2=" " ind1="8" tag="024">
+						<subfield code="a">http://hdl.handle.net/123456789/11</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">Τίτλος μπλα μπλα</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">Τίτλος μπλα μπλα</subfield>
+					</datafield>
+					<datafield ind2="3" ind1="3" tag="246">
+						<subfield code="a">Τίτλος μπλα μπλα</subfield>
+					</datafield>
+				</record>
+			</metadata>
+		</record>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/12</identifier>
+				<datestamp>2012-09-11T08:35:05Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<record xmlns="http://www.loc.gov/MARC21/slim" xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+					<leader>      am         3u     </leader>
+					<datafield ind2=" " ind1=" " tag="042">
+						<subfield code="a">dc</subfield>
+					</datafield>
+					<datafield ind2=" " ind1=" " tag="260">
+						<subfield code="c">2012-09-11T08:35:05Z</subfield>
+					</datafield>
+					<datafield ind2=" " ind1="8" tag="024">
+						<subfield code="a">http://hdl.handle.net/123456789/12</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">asdfadsfadsf</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">asdfadsfadsf</subfield>
+					</datafield>
+					<datafield ind2="3" ind1="3" tag="246">
+						<subfield code="a">asdfadsfadsf</subfield>
+					</datafield>
+				</record>
+			</metadata>
+		</record>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/13</identifier>
+				<datestamp>2012-09-11T08:37:02Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<record xmlns="http://www.loc.gov/MARC21/slim" xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+					<leader>      am         3u     </leader>
+					<datafield ind2=" " ind1=" " tag="042">
+						<subfield code="a">dc</subfield>
+					</datafield>
+					<datafield ind2=" " ind1=" " tag="260">
+						<subfield code="c">2012-09-11T08:37:02Z</subfield>
+					</datafield>
+					<datafield ind2=" " ind1="8" tag="024">
+						<subfield code="a">http://hdl.handle.net/123456789/13</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">δοκιμή</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">δοκιμή</subfield>
+					</datafield>
+					<datafield ind2="3" ind1="3" tag="246">
+						<subfield code="a">δοκιμή</subfield>
+					</datafield>
+				</record>
+			</metadata>
+		</record>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/14</identifier>
+				<datestamp>2012-09-11T09:03:18Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<record xmlns="http://www.loc.gov/MARC21/slim" xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+					<leader>      am         3u     </leader>
+					<datafield ind2=" " ind1=" " tag="042">
+						<subfield code="a">dc</subfield>
+					</datafield>
+					<datafield ind2=" " ind1=" " tag="260">
+						<subfield code="c">2012-09-11T09:03:18Z</subfield>
+					</datafield>
+					<datafield ind2=" " ind1="8" tag="024">
+						<subfield code="a">http://hdl.handle.net/123456789/14</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">δοκιμή</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">δεύτερος τίτλος</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">δοκιμή</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">δεύτερος τίτλος</subfield>
+					</datafield>
+					<datafield ind2="3" ind1="3" tag="246">
+						<subfield code="a">δεύτερος τίτλος</subfield>
+					</datafield>
+					<datafield ind2="3" ind1="3" tag="246">
+						<subfield code="a">δοκιμή</subfield>
+					</datafield>
+					<datafield ind2="3" ind1="3" tag="246">
+						<subfield code="a">δεύτερος τίτλος</subfield>
+					</datafield>
+				</record>
+			</metadata>
+		</record>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/15</identifier>
+				<datestamp>2012-10-03T09:00:57Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<record xmlns="http://www.loc.gov/MARC21/slim" xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+					<leader>      am         3u     </leader>
+					<datafield ind2=" " ind1=" " tag="042">
+						<subfield code="a">dc</subfield>
+					</datafield>
+					<datafield ind2=" " ind1="8" tag="024">
+						<subfield code="a">http://hdl.handle.net/123456789/15</subfield>
+					</datafield>
+					<datafield ind2=" " ind1=" " tag="653">
+						<subfield code="a">Spain--History--Civil War, 1936-1939--Prisoners and prisons (Source: http://id.loc.gov/au...subjects/sh85126132)</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">adsfasdf</subfield>
+					</datafield>
+					<datafield ind2="0" ind1="0" tag="245">
+						<subfield code="a">adsfasdf</subfield>
+					</datafield>
+					<datafield ind2="3" ind1="3" tag="246">
+						<subfield code="a">adsfasdf</subfield>
+					</datafield>
+				</record>
+			</metadata>
+		</record>
+	</ListRecords>
+</OAI-PMH>

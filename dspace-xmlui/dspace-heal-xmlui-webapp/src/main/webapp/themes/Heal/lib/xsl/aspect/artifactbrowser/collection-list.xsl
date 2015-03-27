@@ -19,38 +19,54 @@
 -->
 
 <xsl:stylesheet
-    xmlns:i18n="http://apache.org/cocoon/i18n/2.1"
-    xmlns:dri="http://di.tamu.edu/DRI/1.0/"
-    xmlns:mets="http://www.loc.gov/METS/"
-    xmlns:dim="http://www.dspace.org/xmlns/dspace/dim"
-    xmlns:xlink="http://www.w3.org/TR/xlink/"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
-    xmlns:atom="http://www.w3.org/2005/Atom"
-    xmlns:ore="http://www.openarchives.org/ore/terms/"
-    xmlns:oreatom="http://www.openarchives.org/ore/atom/"
-    xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:xalan="http://xml.apache.org/xalan"
-    xmlns:encoder="xalan://java.net.URLEncoder"
-    xmlns:util="org.dspace.app.xmlui.utils.XSLUtils"
-    xmlns:confman="org.dspace.core.ConfigurationManager"
-    exclude-result-prefixes="xalan encoder i18n dri mets dim xlink xsl util confman">
+        xmlns:i18n="http://apache.org/cocoon/i18n/2.1"
+        xmlns:dri="http://di.tamu.edu/DRI/1.0/"
+        xmlns:mets="http://www.loc.gov/METS/"
+        xmlns:dim="http://www.dspace.org/xmlns/dspace/dim"
+        xmlns:xlink="http://www.w3.org/TR/xlink/"
+        xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
+        xmlns:atom="http://www.w3.org/2005/Atom"
+        xmlns:ore="http://www.openarchives.org/ore/terms/"
+        xmlns:oreatom="http://www.openarchives.org/ore/atom/"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:xalan="http://xml.apache.org/xalan"
+        xmlns:encoder="xalan://java.net.URLEncoder"
+        xmlns:util="org.dspace.app.xmlui.utils.XSLUtils"
+        xmlns:confman="org.dspace.core.ConfigurationManager"
+        exclude-result-prefixes="xalan encoder i18n dri mets dim xlink xsl util confman">
 
     <xsl:output indent="yes"/>
 
     <!-- A collection rendered in the summaryList pattern. Encountered on the community-list page -->
     <xsl:template name="collectionSummaryList-DIM">
         <xsl:variable name="data" select="./mets:dmdSec/mets:mdWrap/mets:xmlData/dim:dim"/>
+        <xsl:variable name="current-locale" select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@qualifier='currentLocale']"/>
+
         <div class="artifact-description">
             <div class="artifact-title">
                 <a href="{@OBJID}">
                     <span class="Z3988">
                         <xsl:choose>
-                            <xsl:when test="string-length($data/dim:field[@element='title'][1]) &gt; 0">
-                                <xsl:value-of select="$data/dim:field[@element='title'][1]"/>
-                            </xsl:when>
-                            <xsl:otherwise>
-                                <i18n:text>xmlui.dri2xhtml.METS-1.0.no-title</i18n:text>
-                            </xsl:otherwise>
+                        <xsl:when test="$current-locale='el'">
+                            <xsl:choose>
+                                <xsl:when test="string-length($data/dim:field[@element='title'][1]) &gt; 0">
+                                    <xsl:value-of select="$data/dim:field[@element='title'][1]"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <i18n:text>xmlui.dri2xhtml.METS-1.0.no-title</i18n:text>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:choose>
+                                <xsl:when test="string-length($data/dim:field[@element='description'][1]) &gt; 0">
+                                    <xsl:value-of select="$data/dim:field[@element='title'][1]"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <i18n:text>xmlui.dri2xhtml.METS-1.0.no-title</i18n:text>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:otherwise>
                         </xsl:choose>
                     </span>
                 </a>
@@ -78,16 +94,16 @@
         <xsl:variable name="data" select="./mets:dmdSec/mets:mdWrap/mets:xmlData/dim:dim"/>
         <a href="{@OBJID}">
             <xsl:choose>
-	            <xsl:when test="string-length($data/dim:field[@element='title'][1]) &gt; 0">
-	                <xsl:value-of select="$data/dim:field[@element='title'][1]"/>
-	            </xsl:when>
-	            <xsl:otherwise>
-	                <i18n:text>xmlui.dri2xhtml.METS-1.0.no-title</i18n:text>
-	            </xsl:otherwise>
+                <xsl:when test="string-length($data/dim:field[@element='title'][1]) &gt; 0">
+                    <xsl:value-of select="$data/dim:field[@element='title'][1]"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <i18n:text>xmlui.dri2xhtml.METS-1.0.no-title</i18n:text>
+                </xsl:otherwise>
             </xsl:choose>
         </a>
-		<!--Display collection strengths (item counts) if they exist-->
-		<xsl:if test="string-length($data/dim:field[@element='format'][@qualifier='extent'][1]) &gt; 0">
+        <!--Display collection strengths (item counts) if they exist-->
+        <xsl:if test="string-length($data/dim:field[@element='format'][@qualifier='extent'][1]) &gt; 0">
             <xsl:text> [</xsl:text>
             <xsl:value-of select="$data/dim:field[@element='format'][@qualifier='extent'][1]"/>
             <xsl:text>]</xsl:text>

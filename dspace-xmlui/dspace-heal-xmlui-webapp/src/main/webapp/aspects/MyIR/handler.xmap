@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    The contents of this file are subject to the license and copyright
+    detailed in the LICENSE and NOTICE files at the root of the source
+    tree and available online at
+
+    http://www.dspace.org/license/
+
+-->
+
+<!--
+
+-->
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+    <map:components>
+
+        <map:generators default="file">
+            <map:generator name="MyIRFeedGenerator" src="com.imc.dspace.app.xmlui.aspect.myir.feed.MyIRFeedGenerator"/>
+            <map:generator name="MyItemsHandler" src="com.imc.dspace.app.xmlui.aspect.myir.MyItemsHandler"/>
+        </map:generators>
+
+        <map:serializers>
+            <map:serializer name="text" src="org.apache.cocoon.serialization.TextSerializer" mime-type="text/plain" logger="sitemap.serializer.text"/>
+        </map:serializers>
+
+        <!--<map:generators>-->
+            <!---->
+        <!--</map:generators>-->
+
+        <map:selectors>
+            <map:selector name="AuthenticatedSelector" src="org.dspace.app.xmlui.aspect.general.AuthenticatedSelector"/>
+        </map:selectors>
+
+    </map:components>
+
+    <map:pipelines>
+
+        <map:pipeline type="noncaching">
+            <map:match pattern="feed/*/**">
+                <map:generate type="MyIRFeedGenerator">
+                    <map:parameter name="feedFormat" value="{1}"/>
+                    <map:parameter name="keyword" value="{2}"/>
+                </map:generate>
+                <map:act type="locale">
+                    <map:transform type="i18n">
+                        <map:parameter name="locale" value="{locale}"/>
+                    </map:transform>
+                </map:act>
+                <map:serialize type="xml"/>
+            </map:match>
+        </map:pipeline>
+
+        <map:pipeline type="noncaching">
+
+            <map:match pattern="my-items/handler/*">
+
+                <map:generate type="MyItemsHandler">
+                    <map:parameter name="itemId" value="{1}"/>
+                    <map:parameter name="toggle" value="{request-param:toggle}"/>
+                    <map:parameter name="listType" value="{request-param:listType}"/>
+                </map:generate>
+
+                <map:serialize type="text"/>
+
+            </map:match>
+
+        </map:pipeline>
+
+    </map:pipelines>
+</map:sitemap>

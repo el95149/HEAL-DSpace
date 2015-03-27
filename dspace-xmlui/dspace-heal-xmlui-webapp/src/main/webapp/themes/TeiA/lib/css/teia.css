@@ -1,0 +1,240 @@
+@import url('myir.css');
+
+body {
+    color: #454545;
+}
+
+a { color: #489AC1; }
+
+.page-header {
+    padding-bottom: 9px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #b30f09;
+    color:#b30f09;
+    font-size:21px;
+}
+
+.form-header {
+    border-bottom: 1px solid #DDDDDD;
+    color: #666666;
+    font-size: 20px;
+    margin: 20px 0;
+    padding-bottom: 5px;
+}
+
+.navbar-inverse {
+    background: -webkit-linear-gradient(#283C64,#489AC1); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#283C64,#489AC1); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#283C64,#489AC1); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#283C64,#489AC1); /* Standard syntax */
+    border-color: #489AC1;
+    opacity: 0.9;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #E5E5E5;
+}
+
+.well {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    /*background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;*/
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.well:hover, .thumbnail:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+.btn-primary {
+    color: #ffffff;
+    background-color: #b30f09;
+    border-color: rgba(140, 20, 0, 0.85);
+}
+
+label.ds-composite-component { display:block; }
+/*#aspect_submission_StepTransformer_list_submit-describe .field-help,  .ds-form-label {display:none;}*/
+ul.community-browse { min-height:50px; margin-bottom: 15px; }
+ul.community-browse li { float:left;width:auto;padding:0 15px;display:block; }
+
+#aspect_artifactbrowser_CollectionViewer_div_collection-view .btn a {
+    color: white;
+    text-decoration: none;
+}
+
+#aspect_discovery_SimpleSearch_div_general-query .ds-form-content {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+#aspect_discovery_SimpleSearch_div_general-query .last .ds-form-content {
+    width: 100%;
+    margin-left: -8px;
+}
+
+#aspect_discovery_SimpleSearch_div_general-query .last .ds-form-content input[type="text"] {
+    width: 80%;
+    display: inline-block;
+}
+
+#aspect_discovery_SimpleSearch_item_used-filters .ds-checkbox-field label {
+    display: block;
+    margin: 3px 0;
+    min-height: 20px;
+    padding-left: 20px;
+    vertical-align: middle;
+}
+
+#aspect_discovery_SimpleSearch_item_used-filters .ds-checkbox-field input[type="checkbox"] {
+    float: left;
+    margin-left: -20px;
+}
+
+#aspect_discovery_SimpleSearch_item_used-filters .fta input[type="radio"] {
+    margin-right: 5px;
+}
+
+#aspect_discovery_SimpleSearch_item_used-filters .fta label {
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.btn.update-filters {
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 1px 5px;
+    margin-left: -10px;
+}
+
+#aspect_discovery_SimpleSearch_div_search-filters input.ds-button-field {
+    margin: 0 5px;
+}
+
+#aspect_artifactbrowser_ConfigurableBrowse_div_browse-navigation input.ds-text-field,
+#aspect_artifactbrowser_ConfigurableBrowse_div_browse-navigation input.ds-button-field {
+    margin: 0;
+    vertical-align: baseline;
+    line-height: 20px;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+#aspect_artifactbrowser_FeedbackForm_div_feedback-form .ds-form-item {
+    margin-bottom: 15px;
+}
+
+#aspect_artifactbrowser_FeedbackForm_div_feedback-form .ds-form-item a {
+    margin: 10px 0;
+    display: block;
+}
+
+#aspect_artifactbrowser_FeedbackForm_div_feedback-form .ds-form-item.last {
+    clear: left;
+}
+
+#aspect_artifactbrowser_FeedbackForm_div_feedback-form .ds-form-item.last .ds-form-label{
+    display: none;
+}
+
+#aspect_submission_StepTransformer_div_submit-describe > .col-lg-12,
+#aspect_submission_StepTransformer_div_submit-describe li.ds-form-item {
+    padding: 10px 0;
+    display:block;
+    clear:none;
+    border-bottom: 1px solid #ddd;
+}
+
+#aspect_submission_StepTransformer_div_submit-describe li.ds-form-item {
+    margin-bottom: 0;
+    clear: both;
+    padding: 10px 15px 15px 15px;
+}
+
+#aspect_submission_StepTransformer_div_submit-describe li.ds-form-item:after {
+    content: " ";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+#aspect_submission_StepTransformer_div_submit-describe li.ds-form-item:last-child {
+    border:none;
+}
+
+#aspect_submission_StepTransformer_div_submit-describe li.ds-form-item .ds-form-label {
+    font-size: 100%;
+}
+
+#aspect_submission_StepTransformer_div_submit-describe > .col-lg-12.odd,
+#aspect_submission_StepTransformer_div_submit-describe li.ds-form-item.even {
+    background-color: #F5F5F5;
+}
+
+.form-submission input[type="text"], .ds-form-content input[type="text"],
+.form-submission input[type="password"], .ds-form-content input[type="password"] {
+    display:inline-block;
+    border-radius: 3px;
+    font-size: 12px;
+    height: 30px;
+    line-height: 1.5;
+    padding: 5px 10px;
+}
+
+.form-submission select, .ds-form-content select {
+    display:inline-block;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 3px;
+    font-size: 12px;
+    padding: 5px 10px;
+    border: 1px solid #CCCCCC;
+    max-width:220px;
+}
+
+.form-submission select.multiple, .ds-form-content select.multiple {
+    height: auto;
+}
+
+.form-submission textarea, .ds-form-content textarea {
+    display:inline-block;
+    border-radius: 3px;
+    padding: 5px 10px;
+}
+
+.form-submission label {
+    display:inline-block;
+}
+
+.form-submission .ds-composite-component {
+    margin-right: 10px;
+    float:left;
+}
+
+.form-submission label.ds-composite-component {
+    font-size: 11px;
+}
+
+.ds-static h4 { font-size: 108%; font-weight: bold; }
+.ds-static ul { list-style: disc inside none; }
+.ds-static ol { list-style: decimal inside none; margin-left: 10px; }
+
+.badge.badge-strength {
+    font-size: 11px;
+    background-color: #C5D5D5;
+    color: #283C64;
+}
+
+#aspect_eperson_LoginChooser_list_login-options li {
+    font-size: 18px;
+}
+
+/* hide rights */
+
+#aspect_artifactbrowser_CommunityViewer_div_community-home .detail-view .detail-view-rights-and-license,
+#aspect_artifactbrowser_CollectionViewer_div_collection-home .detail-view .detail-view-rights-and-license {
+    display: none;
+}

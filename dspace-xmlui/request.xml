@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+	<responseDate>2013-01-31T09:42:34Z</responseDate>
+	<request metadataPrefix="qdc" verb="ListRecords">http://localhost:8080/oai/request</request>
+	<ListRecords>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/3</identifier>
+				<datestamp>2012-06-07T12:16:16Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<dcterms:dateAccepted xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-06-07T08:42:46Z</dcterms:dateAccepted>
+				<dcterms:available xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-06-07T08:42:46Z</dcterms:available>
+				<dcterms:issued xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-06-07</dcterms:issued>
+				<dc:identifier xmlns:dc="http://purl.org/dc/elements/1.1/"
+					type="dcterms:URI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">http://hdl.handle.net/123456789/3
+				</dc:identifier>
+				<dc:title xmlns:dc="http://purl.org/dc/elements/1.1/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="en_US">Δοκιμαστική μεταπτυχιακή</dc:title>
+			</metadata>
+		</record>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/4</identifier>
+				<datestamp>2012-06-07T12:16:16Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<dcterms:dateAccepted xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-06-07T11:55:58Z</dcterms:dateAccepted>
+				<dcterms:available xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-06-07T11:55:58Z</dcterms:available>
+				<dcterms:issued xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-06-07</dcterms:issued>
+				<dc:identifier xmlns:dc="http://purl.org/dc/elements/1.1/"
+					type="dcterms:URI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">http://hdl.handle.net/123456789/4
+				</dc:identifier>
+				<dc:subject xmlns:dc="http://purl.org/dc/elements/1.1/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="en_US">Spain--History--Civil War, 1936-1939--Participation,
+					American (Source: http://id.loc.gov/au...bjects/sh2010113615)
+				</dc:subject>
+				<dc:title xmlns:dc="http://purl.org/dc/elements/1.1/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="en_US">Διδακτορικό 1</dc:title>
+			</metadata>
+		</record>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/5</identifier>
+				<datestamp>2012-06-07T12:16:19Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<dcterms:dateAccepted xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-06-07T12:06:47Z</dcterms:dateAccepted>
+				<dcterms:available xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-06-07T12:06:47Z</dcterms:available>
+				<dcterms:issued xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-06-07</dcterms:issued>
+				<dc:identifier xmlns:dc="http://purl.org/dc/elements/1.1/"
+					type="dcterms:URI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">http://hdl.handle.net/123456789/5
+				</dc:identifier>
+				<dc:subject xmlns:dc="http://purl.org/dc/elements/1.1/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="en_US">Arabic language--Religious aspects--Islam (Source:
+					http://id.loc.gov/au...bjects/sh2009115230)
+				</dc:subject>
+				<dc:title xmlns:dc="http://purl.org/dc/elements/1.1/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="en_US">Test</dc:title>
+			</metadata>
+		</record>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/6</identifier>
+				<datestamp>2012-06-08T06:34:01Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<dcterms:dateAccepted xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-06-08T06:33:04Z</dcterms:dateAccepted>
+				<dcterms:available xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-06-08T06:33:04Z</dcterms:available>
+				<dcterms:issued xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-06-08</dcterms:issued>
+				<dc:identifier xmlns:dc="http://purl.org/dc/elements/1.1/"
+					type="dcterms:URI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">http://hdl.handle.net/123456789/6
+				</dc:identifier>
+				<dc:subject xmlns:dc="http://purl.org/dc/elements/1.1/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="en_US">Cannibalism in motion pictures (Source:
+					http://id.loc.gov/au...subjects/sh00007287)
+				</dc:subject>
+				<dc:title xmlns:dc="http://purl.org/dc/elements/1.1/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="en_US">Κι άλλη δοκιμή</dc:title>
+			</metadata>
+		</record>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/7</identifier>
+				<datestamp>2012-06-08T06:58:53Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<dcterms:dateAccepted xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-06-08T06:58:49Z</dcterms:dateAccepted>
+				<dcterms:available xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-06-08T06:58:49Z</dcterms:available>
+				<dcterms:issued xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-06-08</dcterms:issued>
+				<dc:identifier xmlns:dc="http://purl.org/dc/elements/1.1/"
+					type="dcterms:URI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">http://hdl.handle.net/123456789/7
+				</dc:identifier>
+				<dc:subject xmlns:dc="http://purl.org/dc/elements/1.1/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="en_US">Carambola (Source:
+					http://id.loc.gov/au...subjects/sh94004375)
+				</dc:subject>
+				<dc:title xmlns:dc="http://purl.org/dc/elements/1.1/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="en_US">Κεφάλαιο Βιβλίου 1</dc:title>
+			</metadata>
+		</record>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/8</identifier>
+				<datestamp>2012-06-13T17:45:39Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<dcterms:dateAccepted xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="">2012-06-11T08:30:54Z</dcterms:dateAccepted>
+				<dcterms:available xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="">2012-06-11T08:30:54Z</dcterms:available>
+				<dcterms:issued xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="">2012-06-11</dcterms:issued>
+				<dc:identifier xmlns:dc="http://purl.org/dc/elements/1.1/"
+					type="dcterms:URI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="">http://hdl.handle.net/123456789/8</dc:identifier>
+				<dc:subject xmlns:dc="http://purl.org/dc/elements/1.1/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="en_US">Indian journalists (Source:
+					http://id.loc.gov/au...subjects/sh96004108)
+				</dc:subject>
+				<dc:title xmlns:dc="http://purl.org/dc/elements/1.1/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="en_US">Yet another phd</dc:title>
+			</metadata>
+		</record>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/9</identifier>
+				<datestamp>2012-06-13T18:16:58Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<dcterms:dateAccepted xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="">2012-06-12T10:39:00Z</dcterms:dateAccepted>
+				<dcterms:available xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-06-13T18:16:58Z</dcterms:available>
+				<dcterms:issued xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="">2012-06-12</dcterms:issued>
+				<dc:identifier xmlns:dc="http://purl.org/dc/elements/1.1/"
+					type="dcterms:URI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="">http://hdl.handle.net/123456789/9</dc:identifier>
+				<dc:subject xmlns:dc="http://purl.org/dc/elements/1.1/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="en_US">Theology (Source:
+					http://id.loc.gov/au...bjects/sh2001008984)
+				</dc:subject>
+				<dc:title xmlns:dc="http://purl.org/dc/elements/1.1/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="en_US">Just a master!</dc:title>
+			</metadata>
+		</record>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/10</identifier>
+				<datestamp>2012-06-14T10:34:12Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<dcterms:dateAccepted xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-06-14T08:24:36Z</dcterms:dateAccepted>
+				<dcterms:available xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-06-14T08:24:36Z</dcterms:available>
+				<dcterms:issued xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-06-14</dcterms:issued>
+				<dc:identifier xmlns:dc="http://purl.org/dc/elements/1.1/"
+					type="dcterms:URI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">http://hdl.handle.net/123456789/10
+				</dc:identifier>
+				<dc:subject xmlns:dc="http://purl.org/dc/elements/1.1/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="en_US">American literature--20th century--Bibliography (Source:
+					http://id.loc.gov/au...bjects/sh2009114790)
+				</dc:subject>
+				<dc:title xmlns:dc="http://purl.org/dc/elements/1.1/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="en_US">Δοκιμαστικό Βιβλίο epub</dc:title>
+			</metadata>
+		</record>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/11</identifier>
+				<datestamp>2012-06-26T07:41:02Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<dcterms:dateAccepted xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-06-26T07:41:02Z</dcterms:dateAccepted>
+				<dcterms:available xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-06-26T07:41:02Z</dcterms:available>
+				<dcterms:issued xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-06-26</dcterms:issued>
+				<dc:identifier xmlns:dc="http://purl.org/dc/elements/1.1/"
+					type="dcterms:URI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">http://hdl.handle.net/123456789/11
+				</dc:identifier>
+				<dc:title xmlns:dc="http://purl.org/dc/elements/1.1/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="en_US">Τίτλος μπλα μπλα</dc:title>
+			</metadata>
+		</record>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/12</identifier>
+				<datestamp>2012-09-11T08:35:05Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<dcterms:dateAccepted xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-09-11T08:35:05Z</dcterms:dateAccepted>
+				<dcterms:available xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-09-11T08:35:05Z</dcterms:available>
+				<dcterms:issued xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-09-11</dcterms:issued>
+				<dc:identifier xmlns:dc="http://purl.org/dc/elements/1.1/"
+					type="dcterms:URI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">http://hdl.handle.net/123456789/12
+				</dc:identifier>
+				<dc:title xmlns:dc="http://purl.org/dc/elements/1.1/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="en">asdfadsfadsf</dc:title>
+			</metadata>
+		</record>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/13</identifier>
+				<datestamp>2012-09-11T08:37:02Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<dcterms:dateAccepted xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-09-11T08:37:02Z</dcterms:dateAccepted>
+				<dcterms:available xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-09-11T08:37:02Z</dcterms:available>
+				<dcterms:issued xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-09-11</dcterms:issued>
+				<dc:identifier xmlns:dc="http://purl.org/dc/elements/1.1/"
+					type="dcterms:URI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">http://hdl.handle.net/123456789/13
+				</dc:identifier>
+				<dc:title xmlns:dc="http://purl.org/dc/elements/1.1/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="en">δοκιμή</dc:title>
+			</metadata>
+		</record>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/14</identifier>
+				<datestamp>2012-09-11T09:03:18Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<dcterms:dateAccepted xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-09-11T09:03:18Z</dcterms:dateAccepted>
+				<dcterms:available xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-09-11T09:03:18Z</dcterms:available>
+				<dcterms:issued xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-09-11</dcterms:issued>
+				<dc:identifier xmlns:dc="http://purl.org/dc/elements/1.1/"
+					type="dcterms:URI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">http://hdl.handle.net/123456789/14
+				</dc:identifier>
+				<dc:title xmlns:dc="http://purl.org/dc/elements/1.1/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="el">δοκιμή</dc:title>
+				<dc:title xmlns:dc="http://purl.org/dc/elements/1.1/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="el">δεύτερος τίτλος</dc:title>
+			</metadata>
+		</record>
+		<record>
+			<header>
+				<identifier>oai:localhost:123456789/15</identifier>
+				<datestamp>2012-10-03T09:00:57Z</datestamp>
+				<setSpec>hdl_123456789_2</setSpec>
+			</header>
+			<metadata>
+				<dcterms:dateAccepted xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-10-03T09:00:57Z</dcterms:dateAccepted>
+				<dcterms:issued xmlns:dcterms="http://purl.org/dc/terms/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">2012-10-03</dcterms:issued>
+				<dc:identifier xmlns:dc="http://purl.org/dc/elements/1.1/"
+					type="dcterms:URI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd">http://hdl.handle.net/123456789/15
+				</dc:identifier>
+				<dc:subject xmlns:dc="http://purl.org/dc/elements/1.1/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="en">Spain--History--Civil War, 1936-1939--Prisoners and
+					prisons (Source: http://id.loc.gov/au...subjects/sh85126132)
+				</dc:subject>
+				<dc:title xmlns:dc="http://purl.org/dc/elements/1.1/"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd"
+					xml:lang="el">adsfasdf</dc:title>
+			</metadata>
+		</record>
+	</ListRecords>
+</OAI-PMH>

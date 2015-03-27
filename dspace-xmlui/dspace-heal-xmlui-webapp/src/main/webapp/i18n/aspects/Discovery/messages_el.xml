@@ -26,19 +26,18 @@
 
     <!-- org.dspace.app.xmlui.artifactbrowser.AbstractSearch.java -->
 
-
-
-
     <!-- org.dspace.app.xmlui.artifactbrowser.AdvancedSearch.java -->
-    <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dc.contributor.author_filter">Συγγραφέας</message>
+    <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dc.contributor.author_filter">Συγγραφέας/Δημιουργός</message>
 
     <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dc.subject_filter">Θέμα</message>
     <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dc.type_filter">Τύπος περιεχομένου </message>
     <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dc.date.issued">Ημερομηνία Έκδοσης</message>
     <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dateIssued">Ημερομηνία Έκδοσης</message>
+    <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_datePublished">Ημερομηνία</message>
 	<!-- modified by aanagnostopoulos -->
-	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_type">Τύπος Έργου</message>
+	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_type">Τύπος Τεκμηρίου</message>
 	<!-- END aanagnostopoulos -->
+    <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_journalName">Όνομα περιοδικού</message>
 
     <!-- Site Leve Recently Added Content -->
     <message key="xmlui.ArtifactBrowser.SiteViewer.head_recent_submissions">Πρόσφατες Υποβολές </message>
@@ -61,13 +60,13 @@
 
     <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dc.relation.ispartofseries_filter">Σειρά</message>
 
-    <message key="xmlui.ArtifactBrowser.AbstractSearch.type_dc.contributor.author_browse">Περιήγηση ανά: Συγγραφέα</message>
+    <message key="xmlui.ArtifactBrowser.AbstractSearch.type_dc.contributor.author_browse">Περιήγηση ανά: Συγγραφέα/Δημιουργό</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_dc.title_browse">Περιήγηση ανά: Τίτλο</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_dc.subject_browse">Περιήγηση ανά: Θέμα</message>
         
-    <message key="xmlui.ArtifactBrowser.AbstractSearch.type_dc.description.abstract_browse">Περιήγηση ανά: Περίληψη</message>
+    <message key="xmlui.ArtifactBrowser.AbstractSearch.type_dc.description.abstract_browse">Περιήγηση ανά: Επιτομή</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_series_browse">Περιήγηση ανά: Σειρά</message>
-    <message key="xmlui.ArtifactBrowser.AbstractSearch.type_sponsor_browse">Περιήγηση ανά: Χορηγό</message>
+    <message key="xmlui.ArtifactBrowser.AbstractSearch.type_sponsor_browse">BΠεριήγηση ανά: Χορηγό</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_identifier_browse">Περιήγηση ανά: Αναγνωριστικό</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_language_browse">Περιήγηση ανά: Γλώσσα (ISO)</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_keyword_browse">Περιήγηση ανά: Λέξη-κλειδί</message>
@@ -75,7 +74,7 @@
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_contributor_browse">Περιήγηση ανά: Συντελεστή</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_creator_browse">Περιήγηση ανά: Δημιουργό</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_subject_browse">Περιήγηση ανά: Θέμα</message>
-    <message key="xmlui.ArtifactBrowser.AbstractSearch.type_description_browse">Περιήγηση ανά: Περιγραφή</message>
+    <message key="xmlui.ArtifactBrowser.AbstractSearch.type_description_browse">Περιήγηση ανά: Περιγρφαή</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_relation_browse">Περιήγηση ανά: Σχέση </message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_mime_browse">Περιήγηση ανά: Mime-Type</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_other_browse">Περιήγηση ανά: Άλλους Συντελεστές</message>
@@ -83,43 +82,50 @@
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_department_browse">Περιήγηση ανά: Τμήμα</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_dateissued_dt_browse">Περιήγηση ανά: Ημερομηνία Έκδοσης</message>
 
-    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.author">Συγγραφέας</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.author">Συγγραφέας/Δημιουργός</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.title">Τίτλος</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.subject">Θέμα</message>
-    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dateIssued">Ημερομηνία Έκδοσης</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.datePublished">Ημερομηνία</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dateIssued">Ημερομηνία Καταχώρισης</message>
 	<!-- modified by aanagnostopoulos -->
-	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.type">Τύπος Έργου</message>
-	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.type_filter">Τύπος Έργου</message>
-	<!-- END aanagnostopoulos -->
+	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.type">Τύπος Τεκμηρίου</message>
+	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.type_filter">Τύπος Τεκμηρίου</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.keyword">Λέξη-κλειδί</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.language">Γλώσσα</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.contributor">Συντελεστής</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.abstract">Περίληψη</message>
+    <!-- END aanagnostopoulos -->
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.journalName">Όνομα περιοδικού</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.journalName_filter">Όνομα περιοδικού</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.selected">Επιλεγμένα Φίλτρα</message>
 
 
+    <message key="xmlui.dri2xhtml.structural.pagination-info.nototal">Βλέπετε από {0}-{1}</message>
 
-    <message key="xmlui.dri2xhtml.structural.pagination-info.nototal">Τώρα Βλέπετε από {0}-{1}</message>
-
-    <message key="xmlui.Discovery.AbstractSearch.type_author">Φιλτράρισμα ανά: Συγγραφέα</message>
-    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.author">Συγγραφέας</message>
-    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.author_filter">Συγγραφέας</message>
+    <message key="xmlui.Discovery.AbstractSearch.type_author">Φιλτράρισμα ανά: Συγγραφέα/Δημιουργό</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.author">Συγγραφέας/Δημιουργός</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.author_filter">Συγγραφέας/Δημιουργός</message>
     <message key="xmlui.Discovery.AbstractSearch.type_subject">Φιλτράρισμα ανά: Θέμα</message>
+    <message key="xmlui.Discovery.AbstractSearch.type_type">Φιλτράρισμα ανά: Τύπο Τεκμηρίου</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.subject">Θέμα</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.subject_filter">Θέμα</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dateIssued.year">Ημερομηνία Έκδοσης</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.datePublished.year">Ημερομηνία</message>
 
-
-    <message key="xmlui.Discovery.AbstractSearch.startswith">Έναρξη με</message>
+    <message key="xmlui.Discovery.AbstractSearch.startswith">Έναρξη με: </message>
     <message key="xmlui.Discovery.AbstractSearch.startswith.help">ή εισαγωγή πρώτων γραμμάτων:</message>
     
     <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dc.title_sort">Τίτλος</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dc.date.issued_dt">Ημερομηνία Έκδοσης</message>
 	<!-- modified by aanagnostopoulos -->
 	<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.heal.title_sort">Τίτλος</message>
-	<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.heal.type_sort">Τύπος Έργου</message>
+	<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.heal.type_sort">Τύπος Τεκμηρίου</message>
 	<!-- END aanagnostopoulos -->
 
-    <message key="xmlui.discovery.SearchFacetFilter.no-results">Δεν βρέθηκαν αποτελέσματα</message>
+    <message key="xmlui.discovery.SearchFacetFilter.no-results">Δεν βρέθηκαν τιμές για τα φίλτρα</message>
 
     <message key="xmlui.discovery.AbstractFiltersTransformer.filters.head">Εντοπισμός</message>
-    <message key="xmlui.discovery.AbstractFiltersTransformer.filters.view-more">... Προβολή Περισσοτέρων</message>
+    <message key="xmlui.discovery.AbstractFiltersTransformer.filters.view-more">... Προβολή Περισσότερων</message>
 
 
     <message key="xmlui.discovery.SimpleSearch.search_label">Αναζήτηση</message>

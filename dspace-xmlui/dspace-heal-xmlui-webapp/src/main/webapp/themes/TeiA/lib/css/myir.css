@@ -1,0 +1,141 @@
+
+.table td .ds-checkbox-field input[type="checkbox"] {
+    vertical-align: baseline;
+}
+
+.my-results {
+    border-radius: 4px;
+    margin: 5px 0;
+    background-color: #FAFAFA;
+    border: 1px solid #EBEBEB;
+    line-height: 1em;
+    padding: 7px;
+    vertical-align: middle;
+}
+
+.my-results p {
+    margin:0;
+    text-align: right;
+}
+
+/* Favorites */
+
+.my-block {
+    padding: 5px 0;
+    border-top: 1px solid #D8E8EB;
+    border-bottom: 1px solid #D8E8EB;
+}
+
+.my-block p {
+    display: inline-block;
+    font-size: 13px;
+}
+
+#add-fav-btn {
+    font-weight: bold;
+}
+
+#add-fav-btn:hover,
+#add-fav-btn:focus,
+#add-fav-btn:active,
+#add-fav-btn.active {
+    color: #ffffff;
+    background-color: #BB2722;
+    border-color: rgba(140, 20, 0, 0.85);
+}
+
+#add-fav-btn:active,
+#add-fav-btn.active,
+.open .dropdown-toggle.btn-primary {
+    background-image: none;
+}
+
+#add-fav-btn.on span {
+    /*color: #18BC9C;*/
+    color: #FFCC00;
+}
+
+#add-fav-btn.on .glyphicon-minus-sign {
+    color: #FF9999;
+}
+
+/* Authorship */
+
+#auth-modal-btn {
+    font-weight: bold;
+}
+
+/* User Profile */
+
+.panel-heading .glyphicon {
+    padding-right: 5px;
+}
+
+.panel-heading a:focus {outline:none;}
+.panel-heading a::-moz-focus-inner {border:0;}
+
+.panel ul.collection-list,
+.panel ul.authored-list {
+    padding: 10px 0 0 5px;
+}
+
+div.primary.user-data {
+    margin-top: 0;
+}
+
+.user-data .title {
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 20px;
+    margin-top: -10px;
+    height: 25px;
+}
+
+.user-data dt {
+    min-width: 200px;
+}
+
+.user-data dd {
+    margin-left: 215px;
+}
+
+#ds-search-option .profile-search .glyphicon {
+    margin-right: 5px;
+}
+
+/* Edit Profile */
+
+.form-compact li.ds-form-item {
+    margin: 15px;
+}
+
+.form-compact .form-group .ds-form-label {
+    text-align: right;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-top: 7px;
+    width: 25%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+}
+
+.form-compact .form-group .ds-form-content {
+    width: 75%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.form-compact .form-group .ds-form-content .input {
+    width: 60%;
+}
+
+.form-compact .form-group .ds-radio-field {
+    margin-top: 8px;
+}
+
+.form-compact .form-group .ds-radio-field label {
+    font-weight: normal;
+    display: block;
+}

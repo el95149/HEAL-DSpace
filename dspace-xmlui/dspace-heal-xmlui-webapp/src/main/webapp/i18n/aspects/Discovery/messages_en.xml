@@ -26,18 +26,18 @@
 
     <!-- org.dspace.app.xmlui.artifactbrowser.AbstractSearch.java -->
 
-
-
-
     <!-- org.dspace.app.xmlui.artifactbrowser.AdvancedSearch.java -->
-    <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dc.contributor.author_filter">Author</message>
-    <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_type">Type</message>
+    <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dc.contributor.author_filter">Author/Creator</message>
 
     <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dc.subject_filter">Subject</message>
     <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dc.type_filter">Content Type</message>
     <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dc.date.issued">Date Issued</message>
     <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dateIssued">Date Issued</message>
-
+    <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_datePublished">Date</message>
+    <!-- modified by aanagnostopoulos -->
+    <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_type">Type</message>
+    <!-- END aanagnostopoulos -->
+    <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_journalName">Journal Name</message>
 
     <!-- Site Leve Recently Added Content -->
     <message key="xmlui.ArtifactBrowser.SiteViewer.head_recent_submissions">Recently Added</message>
@@ -60,7 +60,7 @@
 
     <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dc.relation.ispartofseries_filter">Series</message>
 
-    <message key="xmlui.ArtifactBrowser.AbstractSearch.type_dc.contributor.author_browse">Browsing by: Author</message>
+    <message key="xmlui.ArtifactBrowser.AbstractSearch.type_dc.contributor.author_browse">Browsing by: Author/Creator</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_dc.title_browse">Browsing by: Title</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_dc.subject_browse">Browsing by: Subject</message>
         
@@ -82,30 +82,37 @@
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_department_browse">Browsing by: Department</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_dateissued_dt_browse">Browsing by: Issue date</message>
 
-    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.author">Author</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.author">Author/Creator</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.title">Title</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.subject">Subject</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.datePublished">Date</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dateIssued">Date issued</message>
 	<!-- modified by aanagnostopoulos -->
 	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.type">Type</message>
 	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.type_filter">Type</message>
 	<!-- END aanagnostopoulos -->
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.journalName">Journal Name</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.journalName_filter">Journal Name</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.selected">Selected filters</message>
-
 
 
     <message key="xmlui.dri2xhtml.structural.pagination-info.nototal">Now showing items {0}-{1}</message>
 
-    <message key="xmlui.Discovery.AbstractSearch.type_author">Filter by: Author</message>
-    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.author">Author</message>
-    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.author_filter">Author</message>
+    <message key="xmlui.Discovery.AbstractSearch.type_author">Filter by: Author/Creator</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.author">Author/Creator</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.author_filter">Author/Creator</message>
     <message key="xmlui.Discovery.AbstractSearch.type_subject">Filter by: Subject</message>
+    <message key="xmlui.Discovery.AbstractSearch.type_type">Filter by: Type</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.subject">Subject</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.subject_filter">Subject</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dateIssued.year">Date Issued</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.datePublished.year">Date</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.keyword">Keyword</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.language">Language</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.contributor">Contributor</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.abstract">Abstract</message>
 
-
-    <message key="xmlui.Discovery.AbstractSearch.startswith">Starts with</message>
+    <message key="xmlui.Discovery.AbstractSearch.startswith">Starts with: </message>
     <message key="xmlui.Discovery.AbstractSearch.startswith.help">Or enter first few letters:</message>
     
     <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dc.title_sort">Title</message>

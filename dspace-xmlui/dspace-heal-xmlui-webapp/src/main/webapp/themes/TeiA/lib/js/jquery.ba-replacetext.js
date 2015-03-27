@@ -1,0 +1,309 @@
+/*!
+ * jQuery replaceText - v1.1 - 11/21/2009
+ * http://benalman.com/projects/jquery-replacetext-plugin/
+ * 
+ * Copyright (c) 2009 "Cowboy" Ben Alman
+ * Dual licensed under the MIT and GPL licenses.
+ * http://benalman.com/about/license/
+ */
+
+// Script: jQuery replaceText: String replace for your jQueries!
+//
+// *Version: 1.1, Last updated: 11/21/2009*
+// 
+// Project Home - http://benalman.com/projects/jquery-replacetext-plugin/
+// GitHub       - http://github.com/cowboy/jquery-replacetext/
+// Source       - http://github.com/cowboy/jquery-replacetext/raw/master/jquery.ba-replacetext.js
+// (Minified)   - http://github.com/cowboy/jquery-replacetext/raw/master/jquery.ba-replacetext.min.js (0.5kb)
+// 
+// About: License
+// 
+// Copyright (c) 2009 "Cowboy" Ben Alman,
+// Dual licensed under the MIT and GPL licenses.
+// http://benalman.com/about/license/
+// 
+// About: Examples
+// 
+// This working example, complete with fully commented code, illustrates one way
+// in which this plugin can be used.
+// 
+// replaceText - http://benalman.com/code/projects/jquery-replacetext/examples/replacetext/
+// 
+// About: Support and Testing
+// 
+// Information about what version or versions of jQuery this plugin has been
+// tested with, and what browsers it has been tested in.
+// 
+// jQuery Versions - 1.3.2, 1.4.1
+// Browsers Tested - Internet Explorer 6-8, Firefox 2-3.6, Safari 3-4, Chrome, Opera 9.6-10.1.
+// 
+// About: Release History
+// 
+// 1.1 - (11/21/2009) Simplified the code and API substantially.
+// 1.0 - (11/21/2009) Initial release
+
+(function($){
+  '$:nomunge'; // Used by YUI compressor.
+  
+  // Method: jQuery.fn.replaceText
+  // 
+  // Replace text in specified elements. Note that only text content will be
+  // modified, leaving all tags and attributes untouched. The new text can be
+  // either text or HTML.
+  // 
+  // Uses the String prototype replace method, full documentation on that method
+  // can be found here: 
+  // 
+  // https://developer.mozilla.org/En/Core_JavaScript_1.5_Reference/Objects/String/Replace
+  // 
+  // Usage:
+  // 
+  // > jQuery('selector').replaceText( search, replace [, text_only ] );
+  // 
+  // Arguments:
+  // 
+  //  search - (RegExp|String) A RegExp object or substring to be replaced.
+  //    Because the String prototype replace method is used internally, this
+  //    argument should be specified accordingly.
+  //  replace - (String|Function) The String that replaces the substring received
+  //    from the search argument, or a function to be invoked to create the new
+  //    substring. Because the String prototype replace method is used internally,
+  //    this argument should be specified accordingly.
+  //  text_only - (Boolean) If true, any HTML will be rendered as text. Defaults
+  //    to false.
+  // 
+  // Returns:
+  // 
+  //  (jQuery) The initial jQuery collection of elements.
+  
+  $.fn.replaceText = function( search, replace, text_only ) {
+    return this.each(function(){
+      var node = this.firstChild,
+        val,
+        new_val,
+        
+        // Elements to be removed at the end.
+        remove = [];
+      
+      // Only continue if firstChild exists.
+      if ( node ) {
+        
+        // Loop over all childNodes.
+        do {
+          
+          // Only process text nodes.
+          if ( node.nodeType === 3 ) {
+            
+            // The original node value.
+            val = node.nodeValue;
+            
+            // The new value.
+            new_val = val.replace( search, replace );
+            
+            // Only replace text if the new value is actually different!
+            if ( new_val !== val ) {
+              
+              if ( !text_only && /</.test( new_val ) ) {
+                // The new value contains HTML, set it in a slower but far more
+                // robust way.
+                $(node).before( new_val );
+                
+                // Don't remove the node yet, or the loop will lose its place.
+                remove.push( node );
+              } else {
+                // The new value contains no HTML, so it can be set in this
+                // very fast, simple way.
+                node.nodeValue = new_val;
+              }
+            }
+          }
+          
+        } while ( node = node.nextSibling );
+      }
+      
+      // Time to remove those elements!
+      remove.length && $(remove).remove();
+    });
+  };  
+  
+})(jQuery);
+ $(document).ready(function(){
+
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0392\u03B9\u03B2\u03BB\u03B9\u03BF\u03B8\u03B7\u03BA\u03BF\u03BD\u03BF\u03BC\u03AF\u03B1\u03C2 \u03BA\u03B1\u03B9 \u03A3\u03C5\u03C3\u03C4\u03B7\u03BC\u03AC\u03C4\u03C9\u03BD \u03A0\u03BB\u03B7\u03C1\u03BF\u03C6\u03CC\u03C1\u03B7\u03C3\u03B7\u03C2/gi, "Department of Library Science and Information Systems" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0395\u03BC\u03C0\u03BF\u03C1\u03AF\u03B1\u03C2 \u03BA\u03B1\u03B9 \u0394\u03B9\u03B1\u03C6\u03AE\u03BC\u03B9\u03C3\u03B7\u03C2/gi, "Department of Marketing" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0394\u03B9\u03BF\u03AF\u03BA\u03B7\u03C3\u03B7\u03C2 \u0395\u03C0\u03B9\u03C7\u03B5\u03B9\u03C1\u03AE\u03C3\u03B5\u03C9\u03BD/gi, "Department of Business Administration" );
+     $("body *").replaceText( /\u039A\u03B1\u03C4\u03B5\u03CD\u03B8\u03C5\u03BD\u03C3\u03B7 \u0394\u03B9\u03BF\u03AF\u03BA\u03B7\u03C3\u03B7 \u0395\u03C0\u03B9\u03C7\u03B5\u03B9\u03C1\u03AE\u03C3\u03B5\u03C9\u03BD/gi, "Business Administration Direction" );
+     $("body *").replaceText( /\u039A\u03B1\u03C4\u03B5\u03CD\u03B8\u03C5\u03BD\u03C3\u03B7 \u0394\u03B9\u03BF\u03AF\u03BA\u03B7\u03C3\u03B7 \u039C\u03BF\u03BD\u03AC\u03B4\u03C9\u03BD \u03A5\u03B3\u03B5\u03AF\u03B1\u03C2 \u03BA\u03B1\u03B9 \u03A0\u03C1\u03CC\u03BD\u03BF\u03B9\u03B1\u03C2/gi, "Health and Welfare Management Direction" );
+     $("body *").replaceText( /\u039A\u03B1\u03C4\u03B5\u03CD\u03B8\u03C5\u03BD\u03C3\u03B7 \u0394\u03B9\u03BF\u03AF\u03BA\u03B7\u03C3\u03B7 \u03A4\u03BF\u03C5\u03C1\u03B9\u03C3\u03C4\u03B9\u03BA\u03CE\u03BD \u0395\u03C0\u03B9\u03C7\u03B5\u03B9\u03C1\u03AE\u03C3\u03B5\u03C9\u03BD & \u0395\u03C0\u03B9\u03C7\u03B5\u03B9\u03C1\u03AE\u03C3\u03B5\u03C9\u03BD \u03A6\u03B9\u03BB\u03BF\u03BE\u03B5\u03BD\u03AF\u03B1\u03C2/gi, "Tourism Management & Enterprise Hosting Direction" );
+     $("body *").replaceText( /\u03A3\u03C7\u03BF\u03BB\u03AE \u0395\u03C0\u03B1\u03B3\u03B3\u03B5\u03BB\u03BC\u03AC\u03C4\u03C9\u03BD \u03A5\u03B3\u03B5\u03AF\u03B1\u03C2 \u03BA\u03B1\u03B9 \u03A0\u03C1\u03CC\u03BD\u03BF\u03B9\u03B1\u03C2/gi, "Faculty of Health and Caring Professions" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0391\u03B9\u03C3\u03B8\u03B7\u03C4\u03B9\u03BA\u03AE\u03C2 \u03BA\u03B1\u03B9 \u039A\u03BF\u03C3\u03BC\u03B7\u03C4\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2/gi, "Department of Aesthetics and Cosmetology" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0394\u03B7\u03BC\u03CC\u03C3\u03B9\u03B1\u03C2 \u03A5\u03B3\u03B5\u03AF\u03B1\u03C2 \u03BA\u03B1\u03B9 \u039A\u03BF\u03B9\u03BD\u03BF\u03C4\u03B9\u03BA\u03AE\u03C2 \u03A5\u03B3\u03B5\u03AF\u03B1\u03C2/gi, "Department of Public Health and Community Health" );
+     $("body *").replaceText( /\u039A\u03B1\u03C4\u03B5\u03CD\u03B8\u03C5\u03BD\u03C3\u03B7 \u0394\u03B7\u03BC\u03CC\u03C3\u03B9\u03B1\u03C2 \u03A5\u03B3\u03B5\u03AF\u03B1\u03C2 (\u0394\u03B7\u03BC\u03CC\u03C3\u03B9\u03B1\u03C2 \u03A5\u03B3\u03B9\u03B5\u03B9\u03BD\u03AE\u03C2)/gi, "Public Health Direction " );
+     $("body *").replaceText( /\u039A\u03B1\u03C4\u03B5\u03CD\u03B8\u03C5\u03BD\u03C3\u03B7 \u039A\u03BF\u03B9\u03BD\u03BF\u03C4\u03B9\u03BA\u03AE\u03C2 \u03A5\u03B3\u03B5\u03AF\u03B1\u03C2 (\u0395\u03C0\u03B9\u03C3\u03BA\u03B5\u03C0\u03C4\u03CE\u03BD \u03A5\u03B3\u03B5\u03AF\u03B1\u03C2)/gi, "Community Health Direction" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0395\u03C1\u03B3\u03BF\u03B8\u03B5\u03C1\u03B1\u03C0\u03B5\u03AF\u03B1\u03C2/gi, "Department of Occupational Therapy" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0399\u03B1\u03C4\u03C1\u03B9\u03BA\u03CE\u03BD \u0395\u03C1\u03B3\u03B1\u03C3\u03C4\u03B7\u03C1\u03AF\u03C9\u03BD/gi, "Department of Medical Laboratory" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039A\u03BF\u03B9\u03BD\u03C9\u03BD\u03B9\u03BA\u03AE\u03C2 \u0395\u03C1\u03B3\u03B1\u03C3\u03AF\u03B1\u03C2/gi, "Department of Social Work" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039C\u03B1\u03B9\u03B5\u03C5\u03C4\u03B9\u03BA\u03AE\u03C2/gi, "Department of Midwifery Department" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039D\u03BF\u03C3\u03B7\u03BB\u03B5\u03C5\u03C4\u03B9\u03BA\u03AE\u03C2/gi, "Department of Nursing" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039F\u03B4\u03BF\u03BD\u03C4\u03B9\u03BA\u03AE\u03C2 \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2/gi, "Department of Dental Technology" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039F\u03C0\u03C4\u03B9\u03BA\u03AE\u03C2 \u03BA\u03B1\u03B9 \u039F\u03C0\u03C4\u03BF\u03BC\u03B5\u03C4\u03C1\u03AF\u03B1\u03C2/gi, "Department of Optics and Optometry" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u03A1\u03B1\u03B4\u03B9\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2\/\u0391\u03BA\u03C4\u03B9\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2/gi, "Department of Radiology" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u03A6\u03C5\u03C3\u03B9\u03BA\u03BF\u03B8\u03B5\u03C1\u03B1\u03C0\u03B5\u03AF\u03B1\u03C2/gi, "Department of Physiotherapy" );
+     $("body *").replaceText( /\u03A3\u03C7\u03BF\u03BB\u03AE \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03B9\u03BA\u03CE\u03BD \u0395\u03C6\u03B1\u03C1\u03BC\u03BF\u03B3\u03CE\u03BD/gi, "Faculty of Technological Applications" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039C\u03B7\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD \u0392\u03B9\u03BF\u03CA\u03B1\u03C4\u03C1\u03B9\u03BA\u03AE\u03C2 \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2 \u03A4.\u0395./gi, "Department of Biomedical Engineering" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0397\u03BB\u03B5\u03BA\u03C4\u03C1\u03BF\u03BD\u03B9\u03BA\u03CE\u03BD \u039C\u03B7\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD \u03A4.\u0395./gi, "Department of Electronic Engineering" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039C\u03B7\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD \u0395\u03BD\u03B5\u03C1\u03B3\u03B5\u03B9\u03B1\u03BA\u03AE\u03C2 \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2 \u03A4.\u0395./gi, "Department of Energy Technology Engineering" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039C\u03B7\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD \u03A0\u03BB\u03B7\u03C1\u03BF\u03C6\u03BF\u03C1\u03B9\u03BA\u03AE\u03C2 \u03A4.\u0395./gi, "Department of Informatics" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039D\u03B1\u03C5\u03C0\u03B7\u03B3\u03CE\u03BD \u039C\u03B7\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD \u03A4.\u0395./gi, "Department of Naval Architecture" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u03A0\u03BF\u03BB\u03B9\u03C4\u03B9\u03BA\u03CE\u03BD \u039C\u03B7\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD \u03A4.\u0395. \u03BA\u03B1\u03B9 \u039C\u03B7\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD \u03A4\u03BF\u03C0\u03BF\u03B3\u03C1\u03B1\u03C6\u03AF\u03B1\u03C2 \u03BA\u03B1\u03B9 \u0393\u03B5\u03C9\u03C0\u03BB\u03B7\u03C1\u03BF\u03C6\u03BF\u03C1\u03B9\u03BA\u03AE\u03C2 \u03A4.\u0395./gi, "Department of Civil and Infrastructure Engineering and Civil Engineering and Surveying and Geoinformatics Engineering" );
+     $("body *").replaceText( /\u039A\u03B1\u03C4\u03B5\u03CD\u03B8\u03C5\u03BD\u03C3\u03B7 \u039C\u03B7\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD \u03A4\u03BF\u03C0\u03BF\u03B3\u03C1\u03B1\u03C6\u03AF\u03B1\u03C2 & \u0393\u03B5\u03C9\u03C0\u03BB\u03B7\u03C1\u03BF\u03C6\u03BF\u03C1\u03B9\u03BA\u03AE\u03C2 \u03A4.\u0395./gi, "Civil Engineering and Surveying and Geoinformatics Engineering Direction" );
+     $("body *").replaceText( /\u039A\u03B1\u03C4\u03B5\u03CD\u03B8\u03C5\u03BD\u03C3\u03B7 \u03A0\u03BF\u03BB\u03B9\u03C4\u03B9\u03BA\u03CE\u03BD \u039C\u03B7\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD \u03A4.\u0395./gi, "Civil and Infrastructure Engineering Direction" );
+     $("body *").replaceText( /\u03A3\u03C7\u03BF\u03BB\u03AE \u039A\u03B1\u03BB\u03BB\u03B9\u03C4\u03B5\u03C7\u03BD\u03B9\u03BA\u03CE\u03BD \u03A3\u03C0\u03BF\u03C5\u03B4\u03CE\u03BD/gi, "Faculty of Fine Arts and Design" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0393\u03C1\u03B1\u03C6\u03B9\u03C3\u03C4\u03B9\u03BA\u03AE\u03C2/gi, "Department of Graphic Design" );
+     $("body *").replaceText( /\u039A\u03B1\u03C4\u03B5\u03CD\u03B8\u03C5\u03BD\u03C3\u03B7 \u0393\u03C1\u03B1\u03C6\u03B9\u03C3\u03C4\u03B9\u03BA\u03AE\u03C2/gi, "Graphic Design Direction" );
+     $("body *").replaceText( /\u039A\u03B1\u03C4\u03B5\u03CD\u03B8\u03C5\u03BD\u03C3\u03B7 \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2 \u0393\u03C1\u03B1\u03C6\u03B9\u03BA\u03CE\u03BD \u03A4\u03B5\u03C7\u03BD\u03CE\u03BD/gi, "Graphic Arts Technology Direction" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0395\u03C3\u03C9\u03C4\u03B5\u03C1\u03B9\u03BA\u03AE\u03C2 \u0391\u03C1\u03C7\u03B9\u03C4\u03B5\u03BA\u03C4\u03BF\u03BD\u03B9\u03BA\u03AE\u03C2, \u0394\u03B9\u03B1\u03BA\u03CC\u03C3\u03BC\u03B7\u03C3\u03B7\u03C2 \u03BA\u03B1\u03B9 \u03A3\u03C7\u03B5\u03B4\u03B9\u03B1\u03C3\u03BC\u03BF\u03CD \u0391\u03BD\u03C4\u03B9\u03BA\u03B5\u03B9\u03BC\u03AD\u03BD\u03C9\u03BD/gi, "Department of Interior Architecture, Decorative Arts and Design" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u03A3\u03C5\u03BD\u03C4\u03AE\u03C1\u03B7\u03C3\u03B7\u03C2 \u0391\u03C1\u03C7\u03B1\u03B9\u03BF\u03C4\u03AE\u03C4\u03C9\u03BD \u03BA\u03B1\u03B9 \u0388\u03C1\u03B3\u03C9\u03BD \u03A4\u03AD\u03C7\u03BD\u03B7\u03C2/gi, "Department of Conservation of Antiquities and Works of Art" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u03A6\u03C9\u03C4\u03BF\u03B3\u03C1\u03B1\u03C6\u03AF\u03B1\u03C2 \u03BA\u03B1\u03B9 \u039F\u03C0\u03C4\u03B9\u03BA\u03BF\u03B1\u03BA\u03BF\u03C5\u03C3\u03C4\u03B9\u03BA\u03CE\u03BD/gi, "Department of Photography and Audiovisual Media" );
+     $("body *").replaceText( /\u03A3\u03C7\u03BF\u03BB\u03AE \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2 \u03A4\u03C1\u03BF\u03C6\u03AF\u03BC\u03C9\u03BD \u03BA\u03B1\u03B9 \u0394\u03B9\u03B1\u03C4\u03C1\u03BF\u03C6\u03AE\u03C2/gi, "Faculty of Food Technology and Nutrition" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039F\u03B9\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2 \u03BA\u03B1\u03B9 \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2 \u03A0\u03BF\u03C4\u03CE\u03BD/gi, "Department of Oenology and Beverage Technology" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2 \u03A4\u03C1\u03BF\u03C6\u03AF\u03BC\u03C9\u03BD/gi, "Department of Food Technology" );
+     $("body *").replaceText( /\u0399\u03C3\u03C4\u03BF\u03C1\u03B9\u03BA\u03CC \u0391\u03C1\u03C7\u03B5\u03B9\u03B1\u03BA\u03CC \u03A5\u03BB\u03B9\u03BA\u03CC/gi, "History Archive Material" );
+     $("body *").replaceText( /\u0397\u03BB\u03B5\u03BA\u03C4\u03C1\u03BF\u03BD\u03B9\u03BA\u03AD\u03C2 \u0395\u03BA\u03B4\u03CC\u03C3\u03B5\u03B9\u03C2 TEI/gi, "TEI Athens e-Publications" );
+     $("body *").replaceText( /\u03A3\u03C7\u03BF\u03BB\u03AE \u0395\u03C0\u03B1\u03B3\u03B3\u03B5\u03BB\u03BC\u03AC\u03C4\u03C9\u03BD \u03A5\u03B3\u03B5\u03AF\u03B1\u03C2 \u03BA\u03B1\u03B9 \u03A0\u03C1\u03CC\u03BD\u03BF\u03B9\u03B1\u03C2/gi, "Faculty of Health and Caring Professions" );
+     $("body *").replaceText( /\u03A3\u03C7\u03BF\u03BB\u03AE \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03B9\u03BA\u03CE\u03BD \u0395\u03C6\u03B1\u03C1\u03BC\u03BF\u03B3\u03CE\u03BD/gi, "Faculty of Technological Applications" );
+     $("body *").replaceText( /\u03A3\u03C7\u03BF\u03BB\u03AE \u039A\u03B1\u03BB\u03BB\u03B9\u03C4\u03B5\u03C7\u03BD\u03B9\u03BA\u03CE\u03BD \u03A3\u03C0\u03BF\u03C5\u03B4\u03CE\u03BD/gi, "Faculty of Fine Arts and Design" );
+     $("body *").replaceText( /\u03A3\u03C7\u03BF\u03BB\u03AE \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2 \u03A4\u03C1\u03BF\u03C6\u03AF\u03BC\u03C9\u03BD \u03BA\u03B1\u03B9 \u0394\u03B9\u03B1\u03C4\u03C1\u03BF\u03C6\u03AE\u03C2/gi, "Faculty of Food Technology and Nutrition" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u03A0\u03C1\u03BF\u03C3\u03C7\u03BF\u03BB\u03B9\u03BA\u03AE\u03C2 \u0391\u03B3\u03C9\u03B3\u03AE\u03C2/gi, "Department of Preschool Education" );
+     $("body *").replaceText( /\u03A4\u03BF\u03BC\u03B5\u03AF\u03C2 \u03AC\u03BB\u03BB\u03B7\u03C2 \u03B5\u03C1\u03B5\u03C5\u03BD\u03B7\u03C4\u03B9\u03BA\u03AE\u03C2 \u03B4\u03C1\u03B1\u03C3\u03C4\u03B7\u03C1\u03B9\u03CC\u03C4\u03B7\u03C4\u03B1\u03C2/gi, "Other" );
+     $("body *").replaceText( /\u03A4\u03BF \u039C\u03BF\u03C5\u03C3\u03B5\u03AF\u03BF/gi, "The Museum" );
+     $("body *").replaceText( /\u0399\u03B1\u03C4\u03C1\u03B9\u03BA\u03AC \u03A7\u03C1\u03BF\u03BD\u03B9\u03BA\u03AC/gi, "Medical Annals" );
+     $("body *").replaceText( /\u03A3\u03C7\u03BF\u03BB\u03AE \u0394\u03B9\u03BF\u03AF\u03BA\u03B7\u03C3\u03B7\u03C2 \u03BA\u03B1\u03B9 \u039F\u03B9\u03BA\u03BF\u03BD\u03BF\u03BC\u03AF\u03B1\u03C2/gi, "Faculty of Management and Economics" );
+     $("body *").replaceText( /\u03A3\u03C7\u03BF\u03BB\u03AE \u0394\u03B9\u03BF\u03AF\u03BA\u03B7\u03C3\u03B7\u03C2 \u03BA\u03B1\u03B9 \u039F\u03B9\u03BA\u03BF\u03BD\u03BF\u03BC\u03AF\u03B1\u03C2/gi, "Faculty of Management and Economics" );
+     $("body *").replaceText( /\u0391\u03BA\u03B1\u03B4\u03B7\u03BC\u03B1\u03CA\u03BA\u03AE \u0388\u03C1\u03B5\u03C5\u03BD\u03B1 \u03BA\u03B1\u03B9 \u0395\u03BA\u03C0\u03B1\u03AF\u03B4\u03B5\u03C5\u03C3\u03B7/gi, "Academic research and Education" );
+     $("body *").replaceText( /\u03A4\u03CC\u03BC\u03BF\u03C2 \u039A\u0391\', \u03C4\u03B5\u03CD\u03C7\u03BF\u03C2 10 (\u039F\u03BA\u03C4. 2008)/gi, "Volume KA\', Issue 10 (Oct. 2008)" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039C\u03B7\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD \u0395\u03BD\u03B5\u03C1\u03B3\u03B5\u03B9\u03B1\u03BA\u03AE\u03C2 \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2 \u03A4.\u0395./gi, "Department of Energy Technology Engineering" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039F\u03B4\u03BF\u03BD\u03C4\u03B9\u03BA\u03AE\u03C2 \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2/gi, "Department of Dental Technology" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2 \u03A4\u03C1\u03BF\u03C6\u03AF\u03BC\u03C9\u03BD/gi, "Department of Food Technology" );
+     $("body *").replaceText( /\u03A4\u03CC\u03BC\u03BF\u03C2 \u039A\u0392\', \u03C4\u03B5\u03CD\u03C7\u03BF\u03C2 2 (\u03A6\u03B5\u03B2\u03C1. 2008)/gi, "Vol. KB, Issue 2 (Fev. 2008)" );
+     $("body *").replaceText( /\u0394\u03B9\u03BF\u03AF\u03BA\u03B7\u03C3\u03B7/gi, "Administration" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0391\u03B9\u03C3\u03B8\u03B7\u03C4\u03B9\u03BA\u03AE\u03C2 \u03BA\u03B1\u03B9 \u039A\u03BF\u03C3\u03BC\u03B7\u03C4\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2/gi, "Department of Aesthetics and Cosmetology" );
+     $("body *").replaceText( /\u03A4\u03CC\u03BC\u03BF\u03C2 \u039A\u0391\', \u03C4\u03B5\u03CD\u03C7\u03BF\u03C2 3 (\u039C\u03B1\u03C1. 2008)/gi, "Vol. KA, Issue 3 (Mar. 2008)" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u03A1\u03B1\u03B4\u03B9\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2\/\u0391\u03BA\u03C4\u03B9\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2/gi, "Department of Radiology" );
+     $("body *").replaceText( /\u03A4\u03B5\u03CD\u03C7\u03BF\u03C2 11 (\u039F\u03BA\u03C4. - \u0394\u03B5\u03BA. 2007)/gi, "Issue 11 (Oct. - Dec. 2007)" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0399\u03B1\u03C4\u03C1\u03B9\u03BA\u03CE\u03BD \u0395\u03C1\u03B3\u03B1\u03C3\u03C4\u03B7\u03C1\u03AF\u03C9\u03BD/gi, "Department of Medical Laboratory" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039D\u03BF\u03C3\u03B7\u03BB\u03B5\u03C5\u03C4\u03B9\u03BA\u03AE\u03C2/gi, "Department of Nursing" );
+     $("body *").replaceText( /\u03A4\u03B5\u03CD\u03C7\u03BF\u03C2 3\u03BF (\u0399\u03BF\u03CD\u03BD. 2003)/gi, "Issue 3o (Jun. 2003)" );
+     $("body *").replaceText( /\u03A4\u03B5\u03CD\u03C7\u03BF\u03C2 14 (\u0399\u03BF\u03C5\u03BB. - \u03A3\u03B5\u03C0\u03C4. 2008)/gi, "Issue 14 (Jul. - Sep. 2008)" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039F\u03C0\u03C4\u03B9\u03BA\u03AE\u03C2 \u03BA\u03B1\u03B9 \u039F\u03C0\u03C4\u03BF\u03BC\u03B5\u03C4\u03C1\u03AF\u03B1\u03C2\t\u03A0\u03C1\u03BF\u03C3\u03C7\u03BF\u03BB\u03B9\u03BA\u03AE\u03C2 \u0391\u03B3\u03C9\u03B3\u03AE\u03C2/gi, "Department of Optics and Optometry" );
+     $("body *").replaceText( /\u03A4\u03B5\u03CD\u03C7\u03BF\u03C2 9 (\u039C\u03B1\u03C1.- \u039C\u03AC\u03B9\u03BF\u03C2 2007)/gi, "Issue 9 (Mar.- May 2007)" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0395\u03BC\u03C0\u03BF\u03C1\u03AF\u03B1\u03C2 \u03BA\u03B1\u03B9 \u0394\u03B9\u03B1\u03C6\u03AE\u03BC\u03B9\u03C3\u03B7\u03C2/gi, "Department of Marketing" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0395\u03C1\u03B3\u03BF\u03B8\u03B5\u03C1\u03B1\u03C0\u03B5\u03AF\u03B1\u03C2/gi, "Department of Occupational Therapy" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u03A0\u03BF\u03BB\u03B9\u03C4\u03B9\u03BA\u03CE\u03BD \u039C\u03B7\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD \u03A4.\u0395. \u03BA\u03B1\u03B9 \u039C\u03B7\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD \u03A4\u03BF\u03C0\u03BF\u03B3\u03C1\u03B1\u03C6\u03AF\u03B1\u03C2 \u03BA\u03B1\u03B9 \u0393\u03B5\u03C9\u03C0\u03BB\u03B7\u03C1\u03BF\u03C6\u03BF\u03C1\u03B9\u03BA\u03AE\u03C2 \u03A4.\u0395./gi, "Department of Civil and Infrastructure Engineering and Civil Engineering and Surveying and Geoinformatics Engineering" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039C\u03B7\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD \u03A0\u03BB\u03B7\u03C1\u03BF\u03C6\u03BF\u03C1\u03B9\u03BA\u03AE\u03C2 \u03A4.\u0395./gi, "Department of Informatics" );
+     $("body *").replaceText( /\u03A4\u03CC\u03BC\u03BF\u03C2 4 (\u0394\u03B5\u03BA. 2003)/gi, "Vol. 4 (Dec. 2003)" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039C\u03B1\u03B9\u03B5\u03C5\u03C4\u03B9\u03BA\u03AE\u03C2/gi, "Department of Midwifery Department" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039A\u03BF\u03B9\u03BD\u03C9\u03BD\u03B9\u03BA\u03AE\u03C2 \u0395\u03C1\u03B3\u03B1\u03C3\u03AF\u03B1\u03C2/gi, "Department of Social Work" );
+     $("body *").replaceText( /\u0395\u03C1\u03B3\u03B1\u03C3\u03AF\u03B5\u03C2 \u03A6\u03BF\u03B9\u03C4\u03B7\u03C4\u03CE\u03BD/gi, "Thesis - Student Assignments" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u03A6\u03C5\u03C3\u03B9\u03BA\u03BF\u03B8\u03B5\u03C1\u03B1\u03C0\u03B5\u03AF\u03B1\u03C2/gi, "Department of Physiotherapy" );
+     $("body *").replaceText( /\u03A4\u03CC\u03BC\u03BF\u03C2 \u039A\u0392\', \u03C4\u03B5\u03CD\u03C7\u03BF\u03C2 1 (\u0399\u03B1\u03BD. 2008)/gi, "Vol. KB, Issue 1 (Jan. 2008)" );
+     $("body *").replaceText( /\u03A4\u03CC\u03BC\u03BF\u03C2 KA\', \u03C4\u03B5\u03CD\u03C7\u03BF\u03C2 12 (\u0394\u03B5\u03BA. 2008)/gi, "Vol. KA, Issue 12 (Dec. 2008)" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u03A3\u03C5\u03BD\u03C4\u03AE\u03C1\u03B7\u03C3\u03B7\u03C2 \u0391\u03C1\u03C7\u03B1\u03B9\u03BF\u03C4\u03AE\u03C4\u03C9\u03BD \u03BA\u03B1\u03B9 \u0388\u03C1\u03B3\u03C9\u03BD \u03A4\u03AD\u03C7\u03BD\u03B7\u03C2/gi, "Department of Conservation of Antiquities and Works of Art" );
+     $("body *").replaceText( /\u03A4\u03B5\u03CD\u03C7\u03BF\u03C2 08 (\u039C\u03AC\u03B9\u03BF\u03C2.-\u0399\u03BF\u03CD\u03BB. 2006)/gi, "Issue 8 (May-Jul. 2006)" );
+     $("body *").replaceText( /\u03A4\u03B5\u03CD\u03C7\u03BF\u03C2 16 (\u0399\u03B1\u03BD. - \u039C\u03B1\u03C1\u03C4. 2009)/gi, "Issue 16 (Jan - Mar. 2009)" );
+     $("body *").replaceText( /\u03A4\u03B5\u03CD\u03C7\u03BF\u03C2 6 (\u039D\u03BF\u03B5\u03BC. 2006 - \u0399\u03B1\u03BD. 2007)/gi, "Issue 6 (Nov. 2006 - Jan. 2007)" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039C\u03B7\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD \u0392\u03B9\u03BF\u03CA\u03B1\u03C4\u03C1\u03B9\u03BA\u03AE\u03C2 \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2 \u03A4.\u0395./gi, "Department of Biomedical Engineering" );
+     $("body *").replaceText( /\u03A4\u03CC\u03BC\u03BF\u03C2 \u039A\u0391, \u03C4\u03B5\u03CD\u03C7\u03BF\u03C2 9 (\u03A3\u03B5\u03C0\u03C4. 2008)/gi, "Vol. KA, Issue 9 (Sep. 2008)" );
+     $("body *").replaceText( /\u0394\u03B7\u03BC\u03BF\u03C3\u03B9\u03B5\u03CD\u03C3\u03B5\u03B9\u03C2/gi, "Publications" );
+     $("body *").replaceText( /\u03A4\u03CC\u03BC\u03BF\u03C2 KA\', \u03C4\u03B5\u03CD\u03C7\u03BF\u03C2 7-8, (\u0399\u03BF\u03C5\u03BB.-\u0391\u03C5\u03B3. 2008)/gi, "Vol. KA, Issue 7-8 (Jul.-Aug. 2008)" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0397\u03BB\u03B5\u03BA\u03C4\u03C1\u03BF\u03BD\u03B9\u03BA\u03CE\u03BD \u039C\u03B7\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD \u03A4.\u0395./gi, "Department of Electronic Engineering" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0395\u03C3\u03C9\u03C4\u03B5\u03C1\u03B9\u03BA\u03AE\u03C2 \u0391\u03C1\u03C7\u03B9\u03C4\u03B5\u03BA\u03C4\u03BF\u03BD\u03B9\u03BA\u03AE\u03C2, \u0394\u03B9\u03B1\u03BA\u03CC\u03C3\u03BC\u03B7\u03C3\u03B7\u03C2 \u03BA\u03B1\u03B9 \u03A3\u03C7\u03B5\u03B4\u03B9\u03B1\u03C3\u03BC\u03BF\u03CD \u0391\u03BD\u03C4\u03B9\u03BA\u03B5\u03B9\u03BC\u03AD\u03BD\u03C9\u03BD/gi, "Department of Interior Architecture, Decorative Arts and Design" );
+     $("body *").replaceText( /\u03A4\u03CC\u03BC\u03BF\u03C2 \u039A\u0391\', \u03C4\u03B5\u03CD\u03C7\u03BF\u03C2 11 (\u039D\u03BF\u03AD\u03BC\u03B2\u03C1. 2008)/gi, "Vol. KA\', Issue 11 (Nov. 2008)" );
+     $("body *").replaceText( /\u03A4\u03CC\u03BC\u03BF\u03C2 \u039A\u0391\', \u03C4\u03B5\u03CD\u03C7\u03BF\u03C2 1 (\u0399\u03B1\u03BD. 2008)/gi, "Vol. KA, Issue 1 (Jan. 2008)" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0393\u03C1\u03B1\u03C6\u03B9\u03C3\u03C4\u03B9\u03BA\u03AE\u03C2/gi, "Department of Graphic Design" );
+     $("body *").replaceText( /\u03A4\u03B5\u03CD\u03C7\u03BF\u03C2 13 (\u0391\u03C0\u03C1. - \u0399\u03BF\u03C5\u03BD. 2008)/gi, "Issue 13 (Apr. - Jun. 2008)" );
+     $("body *").replaceText( /\u03A4\u03CC\u03BC\u03BF\u03C2 \u039A\u0391\', \u03C4\u03B5\u03CD\u03C7\u03BF\u03C2 2 (\u03A6\u03B5\u03B2\u03C1. 2008)/gi, "Vol. KA. Issue 2 (Fev. 2008)" );
+     $("body *").replaceText( /\u03A4\u03B5\u03CD\u03C7\u03BF\u03C2 7 (\u03A6\u03B5\u03B2\u03C1.-\u0391\u03C0\u03C1. 2006)/gi, "Issue 7 (Feb. - Apr. 2006)" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039D\u03B1\u03C5\u03C0\u03B7\u03B3\u03CE\u03BD \u039C\u03B7\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD \u03A4.\u0395./gi, "Department of Naval Architecture" );
+     $("body *").replaceText( /\u03A4\u03CC\u03BC\u03BF\u03C2 KB\', \u03C4\u03B5\u03CD\u03C7\u03BF\u03C2 3, (\u039C\u03B1\u03C1. 2008)/gi, "Vol. KB, Issue 3 (Mar. 2008)" );
+     $("body *").replaceText( /\u03A4\u03B5\u03CD\u03C7\u03BF\u03C2 15 (\u039F\u03BA\u03C4.- \u0394\u03B5\u03BA. 2008)/gi, "Issue 15 (Oct.- Dec. 2008)" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0394\u03B9\u03BF\u03AF\u03BA\u03B7\u03C3\u03B7\u03C2 \u0395\u03C0\u03B9\u03C7\u03B5\u03B9\u03C1\u03AE\u03C3\u03B5\u03C9\u03BD/gi, "Department of Business Administration" );
+     $("body *").replaceText( /\u03A4\u03CC\u03BC\u03BF\u03C2 \u039A\u0392\', \u03C4\u03B5\u03CD\u03C7\u03BF\u03C2 5-6 (\u039C\u03AC\u03B9\u03BF\u03C2-\u0399\u03BF\u03C5\u03BD. 2009)/gi, "Vol. KB, Issue 5-6 (May-Jun. 2009)" );
+     $("body *").replaceText( /\u0395\u03BA\u03C0\u03B1\u03B9\u03B4\u03B5\u03C5\u03C4\u03B9\u03BA\u03CC \u03C5\u03BB\u03B9\u03BA\u03CC/gi, "Educational material" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039F\u03B9\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2 \u03BA\u03B1\u03B9 \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2 \u03A0\u03BF\u03C4\u03CE\u03BD/gi, "Department of Oenology and Beverage Technology" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u03A6\u03C9\u03C4\u03BF\u03B3\u03C1\u03B1\u03C6\u03AF\u03B1\u03C2 \u03BA\u03B1\u03B9 \u039F\u03C0\u03C4\u03B9\u03BA\u03BF\u03B1\u03BA\u03BF\u03C5\u03C3\u03C4\u03B9\u03BA\u03CE\u03BD/gi, "Department of Photography and Audiovisual Media" );
+     $("body *").replaceText( /\u03A4\u03CC\u03BC\u03BF\u03C2 \u039A\u0391\', \u03C4\u03B5\u03CD\u03C7\u03BF\u03C2 4 (\u039C\u03AC\u03B9\u03BF\u03C2 2008)/gi, "Vol. KA, Issue 4 (May 2008)" );
+     $("body *").replaceText( /\u03A4\u03B5\u03CD\u03C7\u03BF\u03C2 12 (\u0399\u03B1\u03BD. - \u039C\u03B1\u03C1. 2008)/gi, "Issue 12 (Jan. - Mar- 2008)" );
+     $("body *").replaceText( /\u03A4\u03B5\u03CD\u03C7\u03BF\u03C2 5 (\u0399\u03BF\u03C5\u03BB. 2007)/gi, "Issue 5 (Jul. 2007)" );
+     $("body *").replaceText( /\u0395\u03C0\u03B9\u03C4\u03C1\u03BF\u03C0\u03AE \u0395\u03C1\u03B5\u03C5\u03BD\u03CE\u03BD/gi, "Research Committee" );
+     $("body *").replaceText( /\u03A4\u03B5\u03CD\u03C7\u03BF\u03C2 5 (\u0391\u03C5\u03B3. - \u039F\u03BA\u03C4. 2005)/gi, "Issue 5 (Aug. - Oct. 2005)" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0392\u03B9\u03B2\u03BB\u03B9\u03BF\u03B8\u03B7\u03BA\u03BF\u03BD\u03BF\u03BC\u03AF\u03B1\u03C2 \u03BA\u03B1\u03B9 \u03A3\u03C5\u03C3\u03C4\u03B7\u03BC\u03AC\u03C4\u03C9\u03BD \u03A0\u03BB\u03B7\u03C1\u03BF\u03C6\u03CC\u03C1\u03B7\u03C3\u03B7\u03C2/gi, "Department of Library Science and Information Systems" );
+     $("body *").replaceText( /\u03A4\u03CC\u03BC\u03BF\u03C2 \u039A\u0399\', \u03C4\u03B5\u03CD\u03C7\u03BF\u03C2 8 (\u039F\u03BA\u03C4. 2007)/gi, "Volume KI\', Issue 8 (Oct. 2007)" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0394\u03B7\u03BC\u03CC\u03C3\u03B9\u03B1\u03C2 \u03A5\u03B3\u03B5\u03AF\u03B1\u03C2 \u03BA\u03B1\u03B9 \u039A\u03BF\u03B9\u03BD\u03BF\u03C4\u03B9\u03BA\u03AE\u03C2 \u03A5\u03B3\u03B5\u03AF\u03B1\u03C2/gi, "Department of Public Health and Community Health" );
+     $("body *").replaceText( /\u0391\u03C0\u03BF\u03C4\u03B5\u03BB\u03AD\u03C3\u03BC\u03B1\u03C4\u03B1 \u03B5\u03C1\u03B5\u03C5\u03BD\u03B7\u03C4\u03B9\u03BA\u03CE\u03BD \u03AD\u03C1\u03B3\u03C9\u03BD/gi, "Research results" );
+     $("body *").replaceText( /\u03A4\u03CC\u03BC\u03BF\u03C2 \u039A\u0391\', \u03C4\u03B5\u03CD\u03C7\u03BF\u03C2 5-6 (\u0399\u03BF\u03C5\u03BD. 2008)/gi, "Vol. KA, Issue 5-6 (Jun. 2008)" );
+     $("body *").replaceText( /\u03A4\u03B5\u03CD\u03C7\u03BF\u03C2 10 (\u0399\u03BF\u03C5\u03BB.-\u03A3\u03B5\u03C0\u03C4. 2007)/gi, "Issue 10 (Jul.-Sep. 2007)" );
+
+    /* $("body *").replaceText( /\u0391\u03BA\u03B1\u03B4\u03B7\u03BC\u03B1\u03CA\u03BA\u03AE \u0388\u03C1\u03B5\u03C5\u03BD\u03B1 \u03BA\u03B1\u03B9 \u0395\u03BA\u03C0\u03B1\u03AF\u03B4\u03B5\u03C5\u03C3\u03B7/gi, "Academic research and Education" );
+     $("body *").replaceText( /\u03A3\u03C7\u03BF\u03BB\u03AE \u0394\u03B9\u03BF\u03AF\u03BA\u03B7\u03C3\u03B7\u03C2 \u03BA\u03B1\u03B9 \u039F\u03B9\u03BA\u03BF\u03BD\u03BF\u03BC\u03AF\u03B1\u03C2/gi, "Faculty of Management and Economics" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0392\u03B9\u03B2\u03BB\u03B9\u03BF\u03B8\u03B7\u03BA\u03BF\u03BD\u03BF\u03BC\u03AF\u03B1\u03C2 \u03BA\u03B1\u03B9 \u03A3\u03C5\u03C3\u03C4\u03B7\u03BC\u03AC\u03C4\u03C9\u03BD \u03A0\u03BB\u03B7\u03C1\u03BF\u03C6\u03CC\u03C1\u03B7\u03C3\u03B7\u03C2/gi, "Department of Library Science and Information Systems" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0395\u03BC\u03C0\u03BF\u03C1\u03AF\u03B1\u03C2 \u03BA\u03B1\u03B9 \u0394\u03B9\u03B1\u03C6\u03AE\u03BC\u03B9\u03C3\u03B7\u03C2/gi, "Department of Marketing" );
+     $("body *").replaceText( /\u0394\u03B9\u03BF\u03AF\u03BA\u03B7\u03C3\u03B7\u03C2 \u0395\u03C0\u03B9\u03C7\u03B5\u03B9\u03C1\u03AE\u03C3\u03B5\u03C9\u03BD/gi, "Department of Business Administration" );
+     $("body *").replaceText( /\u039A\u03B1\u03C4\u03B5\u03CD\u03B8\u03C5\u03BD\u03C3\u03B7 \u0394\u03B9\u03BF\u03AF\u03BA\u03B7\u03C3\u03B7 \u0395\u03C0\u03B9\u03C7\u03B5\u03B9\u03C1\u03AE\u03C3\u03B5\u03C9\u03BD/gi, "Business Administration Direction" );
+     $("body *").replaceText( /\u039A\u03B1\u03C4\u03B5\u03CD\u03B8\u03C5\u03BD\u03C3\u03B7 \u0394\u03B9\u03BF\u03AF\u03BA\u03B7\u03C3\u03B7 \u039C\u03BF\u03BD\u03AC\u03B4\u03C9\u03BD \u03A5\u03B3\u03B5\u03AF\u03B1\u03C2 \u03BA\u03B1\u03B9 \u03A0\u03C1\u03CC\u03BD\u03BF\u03B9\u03B1\u03C2/gi, "Department of Health and Welfare Management" );
+     $("body *").replaceText( /\u039A\u03B1\u03C4\u03B5\u03CD\u03B8\u03C5\u03BD\u03C3\u03B7 \u0394\u03B9\u03BF\u03AF\u03BA\u03B7\u03C3\u03B7 \u03A4\u03BF\u03C5\u03C1\u03B9\u03C3\u03C4\u03B9\u03BA\u03CE\u03BD \u0395\u03C0\u03B9\u03C7\u03B5\u03B9\u03C1\u03AE\u03C3\u03B5\u03C9\u03BD & \u0395\u03C0\u03B9\u03C7\u03B5\u03B9\u03C1\u03AE\u03C3\u03B5\u03C9\u03BD \u03A6\u03B9\u03BB\u03BF\u03BE\u03B5\u03BD\u03AF\u03B1\u03C2/gi, "Tourism Management & Enterprise Hosting Direction" );
+     $("body *").replaceText( /\u03A3\u03C7\u03BF\u03BB\u03AE \u0395\u03C0\u03B1\u03B3\u03B3\u03B5\u03BB\u03BC\u03AC\u03C4\u03C9\u03BD \u03A5\u03B3\u03B5\u03AF\u03B1\u03C2 \u03BA\u03B1\u03B9 \u03A0\u03C1\u03CC\u03BD\u03BF\u03B9\u03B1\u03C2/gi, "Faculty of Health and Caring Professions" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0391\u03B9\u03C3\u03B8\u03B7\u03C4\u03B9\u03BA\u03AE\u03C2 \u03BA\u03B1\u03B9 \u039A\u03BF\u03C3\u03BC\u03B7\u03C4\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2/gi, "Department of Aesthetics and Cosmetology" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0394\u03B7\u03BC\u03CC\u03C3\u03B9\u03B1\u03C2 \u03A5\u03B3\u03B5\u03AF\u03B1\u03C2 \u03BA\u03B1\u03B9 \u039A\u03BF\u03B9\u03BD\u03BF\u03C4\u03B9\u03BA\u03AE\u03C2 \u03A5\u03B3\u03B5\u03AF\u03B1\u03C2/gi, "Department of Public Health and Community Health" );
+     $("body *").replaceText( /\u039A\u03B1\u03C4\u03B5\u03CD\u03B8\u03C5\u03BD\u03C3\u03B7 \u0394\u03B7\u03BC\u03CC\u03C3\u03B9\u03B1\u03C2 \u03A5\u03B3\u03B5\u03AF\u03B1\u03C2 (\u0394\u03B7\u03BC\u03CC\u03C3\u03B9\u03B1\u03C2 \u03A5\u03B3\u03B9\u03B5\u03B9\u03BD\u03AE\u03C2)/gi, "Public Health Direction " );
+     $("body *").replaceText( /\u039A\u03B1\u03C4\u03B5\u03CD\u03B8\u03C5\u03BD\u03C3\u03B7 \u039A\u03BF\u03B9\u03BD\u03BF\u03C4\u03B9\u03BA\u03AE\u03C2 \u03A5\u03B3\u03B5\u03AF\u03B1\u03C2 (\u0395\u03C0\u03B9\u03C3\u03BA\u03B5\u03C0\u03C4\u03CE\u03BD \u03A5\u03B3\u03B5\u03AF\u03B1\u03C2)/gi, "Community Health Direction" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0395\u03C1\u03B3\u03BF\u03B8\u03B5\u03C1\u03B1\u03C0\u03B5\u03AF\u03B1\u03C2/gi, "Department of Occupational Therapy" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0399\u03B1\u03C4\u03C1\u03B9\u03BA\u03CE\u03BD \u0395\u03C1\u03B3\u03B1\u03C3\u03C4\u03B7\u03C1\u03AF\u03C9\u03BD/gi, "Department of Medical Laboratory" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039A\u03BF\u03B9\u03BD\u03C9\u03BD\u03B9\u03BA\u03AE\u03C2 \u0395\u03C1\u03B3\u03B1\u03C3\u03AF\u03B1\u03C2/gi, "Department of Social Work" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039C\u03B1\u03B9\u03B5\u03C5\u03C4\u03B9\u03BA\u03AE\u03C2/gi, "Department of Midwifery Department" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039D\u03BF\u03C3\u03B7\u03BB\u03B5\u03C5\u03C4\u03B9\u03BA\u03AE\u03C2/gi, "Department of Nursing" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039F\u03B4\u03BF\u03BD\u03C4\u03B9\u03BA\u03AE\u03C2 \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2/gi, "Department of Dental Technology" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039F\u03C0\u03C4\u03B9\u03BA\u03AE\u03C2 \u03BA\u03B1\u03B9 \u039F\u03C0\u03C4\u03BF\u03BC\u03B5\u03C4\u03C1\u03AF\u03B1\u03C2/gi, "Department of Optics and Optometry" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u03A1\u03B1\u03B4\u03B9\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2\\u0391\u03BA\u03C4\u03B9\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2/gi, "Department of Radiology" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u03A6\u03C5\u03C3\u03B9\u03BA\u03BF\u03B8\u03B5\u03C1\u03B1\u03C0\u03B5\u03AF\u03B1\u03C2/gi, "Department of Physiotherapy" );
+     $("body *").replaceText( /\u03A3\u03C7\u03BF\u03BB\u03AE \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03B9\u03BA\u03CE\u03BD \u0395\u03C6\u03B1\u03C1\u03BC\u03BF\u03B3\u03CE\u03BD/gi, "Faculty of Technological Applications" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039C\u03B7\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD \u0392\u03B9\u03BF\u03CA\u03B1\u03C4\u03C1\u03B9\u03BA\u03AE\u03C2 \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2 \u03A4.\u0395./gi, "Department of Biomedical Engineering" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0397\u03BB\u03B5\u03BA\u03C4\u03C1\u03BF\u03BD\u03B9\u03BA\u03CE\u03BD \u039C\u03B7\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD \u03A4.\u0395./gi, "Department of Electronic Engineering" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039C\u03B7\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD \u0395\u03BD\u03B5\u03C1\u03B3\u03B5\u03B9\u03B1\u03BA\u03AE\u03C2 \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2 \u03A4.\u0395./gi, "Department of Energy Technology Engineering" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039C\u03B7\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD \u03A0\u03BB\u03B7\u03C1\u03BF\u03C6\u03BF\u03C1\u03B9\u03BA\u03AE\u03C2 \u03A4.\u0395./gi, "Department of Informatics" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039D\u03B1\u03C5\u03C0\u03B7\u03B3\u03CE\u03BD \u039C\u03B7\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD \u03A4.\u0395./gi, "Department of Naval Architecture" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u03A0\u03BF\u03BB\u03B9\u03C4\u03B9\u03BA\u03CE\u03BD \u039C\u03B7\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD \u03A4.\u0395. \u03BA\u03B1\u03B9 \u039C\u03B7\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD \u03A4\u03BF\u03C0\u03BF\u03B3\u03C1\u03B1\u03C6\u03AF\u03B1\u03C2 \u03BA\u03B1\u03B9 \u0393\u03B5\u03C9\u03C0\u03BB\u03B7\u03C1\u03BF\u03C6\u03BF\u03C1\u03B9\u03BA\u03AE\u03C2 \u03A4.\u0395./gi, "Department of Civil and Infrastructure Engineering and Civil Engineering and Surveying and Geoinformatics Engineering" );
+     $("body *").replaceText( /\u039A\u03B1\u03C4\u03B5\u03CD\u03B8\u03C5\u03BD\u03C3\u03B7 \u039C\u03B7\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD \u03A4\u03BF\u03C0\u03BF\u03B3\u03C1\u03B1\u03C6\u03AF\u03B1\u03C2 & \u0393\u03B5\u03C9\u03C0\u03BB\u03B7\u03C1\u03BF\u03C6\u03BF\u03C1\u03B9\u03BA\u03AE\u03C2 \u03A4.\u0395./gi, "Civil Engineering and Surveying and Geoinformatics Engineering Direction" );
+     $("body *").replaceText( /\u039A\u03B1\u03C4\u03B5\u03CD\u03B8\u03C5\u03BD\u03C3\u03B7 \u03A0\u03BF\u03BB\u03B9\u03C4\u03B9\u03BA\u03CE\u03BD \u039C\u03B7\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD \u03A4.\u0395./gi, "Civil and Infrastructure Engineering Direction" );
+     $("body *").replaceText( /\u03A3\u03C7\u03BF\u03BB\u03AE \u039A\u03B1\u03BB\u03BB\u03B9\u03C4\u03B5\u03C7\u03BD\u03B9\u03BA\u03CE\u03BD \u03A3\u03C0\u03BF\u03C5\u03B4\u03CE\u03BD/gi, "Faculty of Fine Arts and Design" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0393\u03C1\u03B1\u03C6\u03B9\u03C3\u03C4\u03B9\u03BA\u03AE\u03C2/gi, "Department of Graphic Design" );
+     $("body *").replaceText( /\u039A\u03B1\u03C4\u03B5\u03CD\u03B8\u03C5\u03BD\u03C3\u03B7 \u0393\u03C1\u03B1\u03C6\u03B9\u03C3\u03C4\u03B9\u03BA\u03AE\u03C2/gi, "Graphic Design Direction" );
+     $("body *").replaceText( /\u039A\u03B1\u03C4\u03B5\u03CD\u03B8\u03C5\u03BD\u03C3\u03B7 \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2 \u0393\u03C1\u03B1\u03C6\u03B9\u03BA\u03CE\u03BD \u03A4\u03B5\u03C7\u03BD\u03CE\u03BD/gi, "Graphic Arts Technology Direction" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u0395\u03C3\u03C9\u03C4\u03B5\u03C1\u03B9\u03BA\u03AE\u03C2 \u0391\u03C1\u03C7\u03B9\u03C4\u03B5\u03BA\u03C4\u03BF\u03BD\u03B9\u03BA\u03AE\u03C2, \u0394\u03B9\u03B1\u03BA\u03CC\u03C3\u03BC\u03B7\u03C3\u03B7\u03C2 \u03BA\u03B1\u03B9 \u03A3\u03C7\u03B5\u03B4\u03B9\u03B1\u03C3\u03BC\u03BF\u03CD \u0391\u03BD\u03C4\u03B9\u03BA\u03B5\u03B9\u03BC\u03AD\u03BD\u03C9\u03BD/gi, "Department of Interior Architecture, Decorative Arts and Design" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u03A3\u03C5\u03BD\u03C4\u03AE\u03C1\u03B7\u03C3\u03B7\u03C2 \u0391\u03C1\u03C7\u03B1\u03B9\u03BF\u03C4\u03AE\u03C4\u03C9\u03BD \u03BA\u03B1\u03B9 \u0388\u03C1\u03B3\u03C9\u03BD \u03A4\u03AD\u03C7\u03BD\u03B7\u03C2/gi, "Department of Conservation of Antiquities and Works of Art" );$("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u03A6\u03C9\u03C4\u03BF\u03B3\u03C1\u03B1\u03C6\u03AF\u03B1\u03C2 \u03BA\u03B1\u03B9 \u039F\u03C0\u03C4\u03B9\u03BA\u03BF\u03B1\u03BA\u03BF\u03C5\u03C3\u03C4\u03B9\u03BA\u03CE\u03BD/gi, "Department of Photography and Audiovisual Media" );
+     $("body *").replaceText( /\u03A3\u03C7\u03BF\u03BB\u03AE \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2 \u03A4\u03C1\u03BF\u03C6\u03AF\u03BC\u03C9\u03BD \u03BA\u03B1\u03B9 \u0394\u03B9\u03B1\u03C4\u03C1\u03BF\u03C6\u03AE\u03C2/gi, "Faculty of Food Technology and Nutrition" );$("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u039F\u03B9\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2 \u03BA\u03B1\u03B9 \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2 \u03A0\u03BF\u03C4\u03CE\u03BD/gi, "Department of Oenology and Beverage Technology" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2 \u03A4\u03C1\u03BF\u03C6\u03AF\u03BC\u03C9\u03BD/gi, "Department of Food Technology" );
+     $("body *").replaceText( /\u0395\u03BA\u03B4\u03CC\u03C3\u03B5\u03B9\u03C2 \u03A4\u0395\u0399 \u0391\u03B8\u03AE\u03BD\u03B1\u03C2/gi, "TEI Athens Publications" );
+     $("body *").replaceText( /\u03A4\u03BF\u03C5\u03C1\u03B9\u03C3\u03C4\u03B9\u03BA\u03AE \u0395\u03C0\u03B9\u03C3\u03C4\u03B7\u03BC\u03BF\u03BD\u03B9\u03BA\u03AE \u0395\u03C0\u03B9\u03B8\u03B5\u03CE\u03C1\u03B7\u03C3\u03B7 (\u03A4ourist Scientific Review)/gi, "" );
+     $("body *").replaceText( /\u0394\u03B9\u03BF\u03AF\u03BA\u03B7\u03C3\u03B7 \u03BA\u03B1\u03B9 \u039F\u03B9\u03BA\u03BF\u03BD\u03BF\u03BC\u03AF\u03B1 (\u039C\u03B1nagement and Economics)/gi, "" );
+     $("body *").replaceText( /\u03A4\u03BF\u03C5\u03C1\u03B9\u03C3\u03C4\u03B9\u03BA\u03AC \u0398\u03AD\u03BC\u03B1\u03C4\u03B1/gi, "" );
+     $("body *").replaceText( /Science & Technology/gi, "" );
+     $("body *").replaceText( /\u03A4\u03BF \u0392\u03AE\u03BC\u03B1 \u03C4\u03BF\u03C5 \u0391\u03C3\u03BA\u03BB\u03B7\u03C0\u03B9\u03BF\u03CD/gi, "" );
+     $("body *").replaceText( /Health Science Journal/gi, "" );
+     $("body *").replaceText( /\u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03B9\u03BA\u03AC \u03A7\u03C1\u03BF\u03BD\u03B9\u03BA\u03AC/gi, "" );$("body *").replaceText( /\u039D\u03BF\u03C3\u03B7\u03BB\u03B5\u03C5\u03C4\u03B9\u03BA\u03AE/gi, "" );
+     $("body *").replaceText( /\u0399\u03C3\u03C4\u03BF\u03C1\u03B9\u03BA\u03CC \u0391\u03C1\u03C7\u03B5\u03AF\u03BF \u03C4\u03BF\u03C5 \u0399\u03B4\u03C1\u03CD\u03BC\u03B1\u03C4\u03BF\u03C2/gi, "History Archive" );$("body *").replaceText( /\u0394\u03B9\u03BF\u03AF\u03BA\u03B7\u03C3\u03B7/gi, "Administration" );
+     $("body *").replaceText( /\u0395\u03C0\u03B9\u03C4\u03C1\u03BF\u03C0\u03AE \u0395\u03C1\u03B5\u03C5\u03BD\u03CE\u03BD/gi, "Research Committee" );
+     $("body *").replaceText( /\u03A3\u03C7\u03BF\u03BB\u03AE \u0394\u03B9\u03BF\u03AF\u03BA\u03B7\u03C3\u03B7\u03C2 \u03BA\u03B1\u03B9 \u039F\u03B9\u03BA\u03BF\u03BD\u03BF\u03BC\u03AF\u03B1\u03C2/gi, "Faculty of Management and Economics" );
+     $("body *").replaceText( /\u03A3\u03C7\u03BF\u03BB\u03AE \u0395\u03C0\u03B1\u03B3\u03B3\u03B5\u03BB\u03BC\u03AC\u03C4\u03C9\u03BD \u03A5\u03B3\u03B5\u03AF\u03B1\u03C2 \u03BA\u03B1\u03B9 \u03A0\u03C1\u03CC\u03BD\u03BF\u03B9\u03B1\u03C2/gi, "Faculty of Health and Caring Professions" );
+     $("body *").replaceText( /\u03A3\u03C7\u03BF\u03BB\u03AE \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03B9\u03BA\u03CE\u03BD \u0395\u03C6\u03B1\u03C1\u03BC\u03BF\u03B3\u03CE\u03BD/gi, "Faculty of Technological Applications" );
+     $("body *").replaceText( /\u03A3\u03C7\u03BF\u03BB\u03AE \u039A\u03B1\u03BB\u03BB\u03B9\u03C4\u03B5\u03C7\u03BD\u03B9\u03BA\u03CE\u03BD \u03A3\u03C0\u03BF\u03C5\u03B4\u03CE\u03BD/gi, "Faculty of Fine Arts and Design" );
+     $("body *").replaceText( /\u03A3\u03C7\u03BF\u03BB\u03AE \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B1\u03C2 \u03A4\u03C1\u03BF\u03C6\u03AF\u03BC\u03C9\u03BD \u03BA\u03B1\u03B9 \u0394\u03B9\u03B1\u03C4\u03C1\u03BF\u03C6\u03AE\u03C2/gi, "Faculty of Food Technology and Nutrition" );
+     $("body *").replaceText( /\u03A4\u03BC\u03AE\u03BC\u03B1 \u03A0\u03C1\u03BF\u03C3\u03C7\u03BF\u03BB\u03B9\u03BA\u03AE\u03C2 \u0391\u03B3\u03C9\u03B3\u03AE\u03C2/gi, "Department of Preschool Education" );
+     $("body *").replaceText( /\u03A4\u03BF\u03BC\u03B5\u03AF\u03C2 \u03AC\u03BB\u03BB\u03B7\u03C2 \u03B5\u03C1\u03B5\u03C5\u03BD\u03B7\u03C4\u03B9\u03BA\u03AE\u03C2 \u03B4\u03C1\u03B1\u03C3\u03C4\u03B7\u03C1\u03B9\u03CC\u03C4\u03B7\u03C4\u03B1\u03C2/gi, "Other" );
+     $("body *").replaceText( /\u03A4\u03BF \u039C\u03BF\u03C5\u03C3\u03B5\u03AF\u03BF/gi, "The Museum" );
+     $("body *").replaceText( /\u0399\u03B1\u03C4\u03C1\u03B9\u03BA\u03AC \u03A7\u03C1\u03BF\u03BD\u03B9\u03BA\u03AC/gi, "Medical Annals" );
+     $("body *").replaceText( /\u03A4\u03CC\u03BC\u03BF\u03C2 \u039A\u0391\\', \u03C4\u03B5\u03CD\u03C7\u03BF\u03C2 10 \(\u039F\u03BA\u03C4. 2008\)/gi, "Volume KA', Issue 10 (Oct. 2008)" );
+     $("body *").replaceText( /\u03A4\u03CC\u03BC\u03BF\u03C2 \u039A\u0399\\', \u03C4\u03B5\u03CD\u03C7\u03BF\u03C2 8 \(\u039F\u03BA\u03C4. 2007\)/gi, "Volume KI', Issue 8 (Oct. 2007)" );
+     $("body *").replaceText( /\u03A4\u03B5\u03CD\u03C7\u03BF\u03C2 3\u03BF \(\u0399\u03BF\u03CD\u03BD. 2003\)/gi, "Issue 3o (Jun. 2003)" );
+ */
+ });

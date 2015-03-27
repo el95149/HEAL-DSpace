@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!--
+
+    The contents of this file are subject to the license and copyright
+    detailed in the LICENSE and NOTICE files at the root of the source
+    tree and available online at
+
+    http://www.dspace.org/license/
+
+-->
+<catalogue xml:lang="en" xmlns:i18n="http://apache.org/cocoon/i18n/2.1" xmlns="http://apache.org/cocoon/i18n/2.1">
+
+    <message key="xmlui.MyIR.untitled"><i>Χωρίς τίτλο</i></message>
+
+    <!-- Favorites -->
+    <message key="xmlui.MyIR.Favorites.title">Τα Αγαπημένα μου</message>
+    <message key="xmlui.MyIR.Favorites.trail">Τα Αγαπημένα μου</message>
+    <message key="xmlui.MyIR.Favorites.head">Τα Αγαπημένα μου</message>
+    <message key="xmlui.MyIR.Favorites.email">Ηλεκτρονικό ταχυδρομείο: </message>
+    <message key="xmlui.MyIR.Favorites.info">Αυτά είναι τα τεκμήρια που έχετε εισάγει στα αγαπημένα σας στην «Υπατία».</message>
+    <message key="xmlui.MyIR.Favorites.no.results">Δεν έχετε εισάγει τεκμήρια στα αγαπημένα.</message>
+    <message key="xmlui.MyIR.Favorites.column1">Ημ/νία προσθήκης</message>
+    <message key="xmlui.MyIR.Favorites.column2">Τίτλος</message>
+    <message key="xmlui.MyIR.Favorites.column3">Συλλογή</message>
+    <message key="xmlui.MyIR.Favorites.limit">Αυτή τη στιγμή εμφανίζονται τα πρώτα 50 από τα αγαπημένα σας παραπάνω. </message>
+    <message key="xmlui.MyIR.Favorites.remove">Αφαίρεση</message>
+    <message key="xmlui.MyIR.Favorites.displayall">Εμφάνιση όλων των αγαπημένων μου.</message>
+    <message key="xmlui.MyIR.Favorites.add">Αγαπημένα</message>
+    <message key="xmlui.MyIR.Favorites.total.results">Σύνολο τεκμηρίων: <strong>{0}</strong></message>
+
+    <!-- Authorship -->
+    <message key="xmlui.MyIR.Authorship.title">Προσωπική Παραγωγή</message>
+    <message key="xmlui.MyIR.Authorship.trail">Προσωπική Παραγωγή</message>
+    <message key="xmlui.MyIR.Authorship.head">Τεκμήρια Προσωπικής Παραγωγής</message>
+    <message key="xmlui.MyIR.Authorship.disclaimer">Προσθέστε το συγκεκριμένο τεκμήριο στην προσωπική σας παραγωγή μόνο εφόσον είστε ο συγγραφέας/δημιουργός του ή αν έχετε συμβάλει στη δημιουργία του.</message>
+    <message key="xmlui.MyIR.Authorship.info">Αυτά είναι τα τεκμήρια που έχετε εισάγει στην προσωπική σας παραγωγή στην «Υπατία».</message>
+    <message key="xmlui.MyIR.Authorship.no.results">Δεν έχετε καταχωρίσει τεκμήρια στην προσωπική σας παραγωγή.</message>
+    <message key="xmlui.MyIR.Authorship.limit">Αυτή τη στιγμή εμφανίζονται τα πρώτα 50 από τα τεκμήριά σας. </message>
+    <message key="xmlui.MyIR.Authorship.item.available">Αυτό το τεκμήριο ανήκει στην προσωπική σας παραγωγή</message>
+    <message key="xmlui.MyIR.Authorship.add">Προσθήκη στην Προσωπική Παραγωγή</message>
+    <message key="xmlui.MyIR.Authorship.add.short">Προσθήκη στην Προσωπική Παραγωγή</message>
+    <message key="xmlui.MyIR.Authorship.remove">Αφαίρεση από την Προσωπική Παραγωγή</message>
+    <message key="xmlui.MyIR.Authorship.remove.short">Αφαίρεση</message>
+    <message key="xmlui.MyIR.Authorship.displayall">Εμφάνιση όλων των τεκμηρίων.</message>
+    <message key="xmlui.MyIR.Authorship.total.results">Σύνολο τεκμηρίων: <strong>{0}</strong></message>
+    <message key="xmlui.MyIR.Authorship.column1">Τίτλος</message>
+    <message key="xmlui.MyIR.Authorship.column2">Συλλογή</message>
+
+    <!-- Academic Interests -->
+    <message key="xmlui.MyIR.AcademicInterests.title">Τα Ερευνητικά Ενδιαφέροντά μου</message>
+    <message key="xmlui.MyIR.AcademicInterests.trail">Τα Ερευνητικά Ενδιαφέροντά μου</message>
+    <message key="xmlui.MyIR.AcademicInterests.head">Τα Ερευνητικά Ενδιαφέροντά μου</message>
+    <message key="xmlui.MyIR.AcademicInterests.info">Αυτοί είναι οι όροι που έχετε εισάγει στα ενδιαφέροντα σας στην «Υπατία».</message>
+
+    <message key="xmlui.MyIR.AcademicInterests.no.results">Δεν έχετε εισάγει όρους στα ενδιαφέροντα.</message>
+    <message key="xmlui.MyIR.AcademicInterests.column2">Τίτλος</message>
+    <message key="xmlui.MyIR.AcademicInterests.column3">RSS Feed σχετικών τεκμηρίων</message>
+    <message key="xmlui.MyIR.AcademicInterests.limit">Αυτή τη στιγμή εμφανίζονται τα πρώτα 50 από τα ενδιαφέροντά σας παραπάνω. </message>
+    <message key="xmlui.MyIR.AcademicInterests.remove">Αφαίρεση</message>
+    <message key="xmlui.MyIR.AcademicInterests.displayall">Εμφάνιση όλων των ερευνητικών ενδιαφερόντων μου.</message>
+
+    <message key="xmlui.MyIR.AcademicInterests.no.results">Δεν έχετε εισάγει όρους στα ενδιαφέροντα.</message>
+    <message key="xmlui.MyIR.AcademicInterests.column2">Τίτλος</message>
+    <message key="xmlui.MyIR.AcademicInterests.column3">RSS Feed σχετικών τεκμηρίων</message>
+    <message key="xmlui.MyIR.AcademicInterests.limit">Έχουμε βάλει σε λίστα μόνο 50 απο τα ενδιαφέροντα σας παραπάνω. </message>
+    <message key="xmlui.MyIR.AcademicInterests.remove">Αφαίρεση</message>
+    <message key="xmlui.MyIR.AcademicInterests.add">Προσθήκη</message>
+    <message key="xmlui.MyIR.AcademicInterests.displayall">Εμφάνιση όλων των ερευνητικών ενδιαφερόντων μου.</message>
+
+    <message key="xmlui.MyIR.AcademicInterests.addterm">Εισαγωγή Όρου</message>
+    <message key="xmlui.MyIR.AcademicInterests.addtermhint">Εισάγετε έναν τεχνικό όρο που ανήκει στα Ερευνητικά σας Ενδιαφέροντα</message>
+    <message key="xmlui.MyIR.AcademicInterests.addinterest">Προσθήκη Ερευνητικού Ενδιαφέροντος</message>
+    <message key="xmlui.MyIR.AcademicInterests.total.results">Σύνολο όρων: <strong>{0}</strong></message>
+
+    <!-- Profile -->
+    <message key="xmlui.MyIR.Profile.generic.profile">Προφίλ Χρήστη</message>
+    <message key="xmlui.MyIR.Profile.owner.private.warning">Το προφίλ σας δεν είναι ανοιχτό και είναι ορατό μόνο σε εσάς.</message>
+    <message key="xmlui.MyIR.Profile.no.access">Δεν έχετε δικαίωμα πρόσβαση στο συγκεκριμένο προφίλ.</message>
+    <message key="xmlui.MyIR.Profile.email">E-mail</message>
+    <message key="xmlui.MyIR.Profile.affiliation">Ίδρυμα/Φορέας</message>
+    <message key="xmlui.MyIR.Profile.profession">Ιδιότητα</message>
+    <message key="xmlui.MyIR.Profile.website">URL Ιστοσελίδας</message>
+    <message key="xmlui.MyIR.Profile.set.public">Ενεργοποίηση Ανοιχτού Προφίλ</message>
+    <message key="xmlui.MyIR.Profile.set.public.yes">Ναι, να εμφανίζονται τα στοιχεία μου</message>
+    <message key="xmlui.MyIR.Profile.set.public.no">Όχι</message>
+    <message key="xmlui.MyIR.Profile.academic.interests">Ερευνητικά Ενδιαφέροντα</message>
+    <message key="xmlui.MyIR.Profile.collections_subscriptions">Συλλογές Ενδιαφέροντος</message>
+    <message key="xmlui.MyIR.Profile.authored_items">Τεκμήρια Προσωπικής Παραγωγής</message>
+    <message key="xmlui.MyIR.EditProfile.title_update">Ο Λογαριασμός μου: Ενημέρωση Προφίλ</message>
+    <message key="xmlui.MyIR.EditProfile.head_update">Ο Λογαριασμός μου: Ενημέρωση Προφίλ</message>
+
+    <!-- Profile search -->
+    <message key="xmlui.administrative.eperson.myir.SearchEPeopleMain.title">Αναζήτηση Χρηστών</message>
+    <message key="xmlui.administrative.eperson.myir.search_epeople_trail">Αναζήτηση Χρηστών</message>
+    <message key="xmlui.administrative.eperson.myir.SearchEPeopleMain.main_head">Αναζήτηση Χρηστών</message>
+    <message key="xmlui.administrative.eperson.myir.SearchEPeopleMain.actions_search">Αναζήτηση για</message>
+    <message key="xmlui.administrative.eperson.myir.SearchEPeopleMain.search_help">Αναζήτήστε βάσει ονόματος, επαγγέλματος, ιδρύματος και ερευνητικών ενδιαφερόντων</message>
+    <message key="xmlui.administrative.eperson.myir.SearchEPeopleMain.search_column1">Όνομα</message>
+</catalogue>
