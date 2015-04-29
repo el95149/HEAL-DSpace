@@ -839,7 +839,7 @@ public class HEALQDCCrosswalk extends SelfNamedPlugin implements
 		//Convert 'heal.access' 'forever' value to 'embargo', to validate against the XSD
 		Element accessElement = null;
 		for (Element element : result) {
-			if(element.getName().equals("dateAvailable")) {
+			if(element.getName().equals("access")) {
 				accessElement = element;
 				break;
 			}
