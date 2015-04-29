@@ -28,7 +28,7 @@
 	</scm>
 
 	<properties>
-		<default.dspace.dir>C:/Users/user/Projects/TEI-Ath/dspace-install</default.dspace.dir>
+		<default.dspace.dir>/dspace</default.dspace.dir>
 		<default.mail.server>smtp.example.com</default.mail.server>
 		<default.solr.server>http://localhost:8080/solr</default.solr.server>
 	</properties>
@@ -49,7 +49,7 @@
 			</activation>
 			<build>
 				<filters>
-					<filter>${basedir}/config/dspace.cfg</filter>
+					<filter>${dspace.config}</filter>
 				</filters>
 			</build>
 		</profile>
