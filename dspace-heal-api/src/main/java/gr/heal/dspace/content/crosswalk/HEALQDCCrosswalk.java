@@ -372,7 +372,7 @@ public class HEALQDCCrosswalk extends SelfNamedPlugin implements
 		XSOMParser parser = new XSOMParser();
 		try {
 			String schemaURL = schemaLocation.split(" ")[1];
-			log.error(schemaURL);
+			log.info(schemaURL);
 			parser.parse(new URL(schemaURL));
 			XSSchemaSet result2 = parser.getResult();
 			log.error(result2);
@@ -834,6 +834,18 @@ public class HEALQDCCrosswalk extends SelfNamedPlugin implements
 			dateAvailableElement = new Element("dateAvailable", healNamespace);
 			dateAvailableElement.setText(dateAvailableValue);
 			result.add(dateAvailableElement);
+		}
+		
+		//Convert 'heal.access' 'forever' value to 'embargo', to validate against the XSD
+		Element accessElement = null;
+		for (Element element : result) {
+			if(element.getName().equals("dateAvailable")) {
+				accessElement = element;
+				break;
+			}
+		}
+		if(accessElement!=null && accessElement.getText().equals("forever")) {
+			accessElement.setText("embargo");
 		}
 		
 		// clean up values for existing metadata
