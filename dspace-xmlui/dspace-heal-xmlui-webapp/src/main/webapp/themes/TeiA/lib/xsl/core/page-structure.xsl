@@ -935,6 +935,13 @@ references to stylesheets pulled directly from the pageMeta element. -->
             <div id="ds-footer">
                 <div class="row">
                     <div class="col-lg-7 pub">
+                        <a href="http://dlproject.library.teiath.gr/index.html" target="_blank">
+                            <img>
+                                <xsl:attribute name="src">
+                                    <xsl:value-of select="concat($theme-path,'/images/logo_L2_cropped_transparent.png')"/>
+                                </xsl:attribute>
+                            </img>
+                        </a>
                         <a href="http://www.digitalplan.gov.gr/portal/" target="_blank">
                             <img>
                                 <xsl:attribute name="src">
