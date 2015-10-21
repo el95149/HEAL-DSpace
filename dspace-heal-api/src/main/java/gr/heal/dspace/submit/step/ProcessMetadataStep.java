@@ -44,6 +44,8 @@ public class ProcessMetadataStep extends DescribeStep {
 	public static final String HEAL_SCHEMA = "heal";
 
 	public static final String SOURCE_PREFIX = " (URL: ";
+	
+	public static final String SOURCE_PREFIX_DHARE = " (DHARE: ";
 
 	public static final String SOURCE_SUFFIX = ")";
 
@@ -162,9 +164,38 @@ public class ProcessMetadataStep extends DescribeStep {
 		// heal:type
 		clearLanguageAttribute(item, "type", null);
 
+		//dc.contributor.author: split and create, if author comes from DHARE
+		DCValue[] values = item.getMetadata(MetadataSchema.DC_SCHEMA, "contributor", "author",
+				Item.ANY);
+		item.clearMetadata(MetadataSchema.DC_SCHEMA, "contributor", "author", Item.ANY);
+		for (DCValue dcValue : values) {
+			String value = null;
+			String uri = null;
+			if (dcValue.value.contains(SOURCE_PREFIX_DHARE)) {
+				try {
+				value = dcValue.value.substring(0,
+						dcValue.value.lastIndexOf(SOURCE_PREFIX_DHARE))+ dcValue.value.substring(dcValue.value.lastIndexOf(SOURCE_SUFFIX)+1, dcValue.value.length());
+				uri = dcValue.value.substring(
+						(dcValue.value.lastIndexOf(SOURCE_PREFIX_DHARE)+SOURCE_PREFIX_DHARE.length()),
+						dcValue.value.lastIndexOf(SOURCE_SUFFIX));
+				}catch(Exception e) { //handle any bad user input
+					value = dcValue.value;
+				}
+				
+			} else {
+				value = dcValue.value;
+			}
+			item.addMetadata(MetadataSchema.DC_SCHEMA, "contributor", "author", dcValue.language,
+					value);
+			if(uri!=null) {
+				item.addMetadata(HEAL_SCHEMA, "contributorID", "dhareID", null, uri);
+			}
+		}
+		
+		
 		// heal:classification & heal:classificationURI: split and create, if
 		// classification comes from an external schema
-		DCValue[] values = item.getMetadata(HEAL_SCHEMA, "classification", null,
+		values = item.getMetadata(HEAL_SCHEMA, "classification", null,
 				Item.ANY);
 		item.clearMetadata(HEAL_SCHEMA, "classification", null, Item.ANY);
 		for (DCValue dcValue : values) {

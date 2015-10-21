@@ -748,7 +748,7 @@
            </xsl:text></script>
         </xsl:if>
         
-        <!-- modified by aanagnostopoulos: added external autocomplete service (Triple store)-->
+        <!-- modified by aanagnostopoulos: added external autocomplete service (Triple store) & external DHARE autocomplete service-->
         
         <xsl:if test="/dri:document/dri:body/dri:div/dri:list[@type='form']/dri:item/dri:field[@id='aspect.submission.StepTransformer.field.dc_subject']">
         <script type="text/javascript">
@@ -794,6 +794,112 @@
 				});</xsl:text>         
         </script>
 		</xsl:if>
+		<xsl:if test="/dri:document/dri:body/dri:div/dri:list[@type='form']/dri:item/dri:field[@id='aspect.submission.StepTransformer.field.dc_contributor_author']">
+        <script type="text/javascript">
+        <xsl:text>
+			$(function() {
+					var acelem = $( "#aspect_submission_StepTransformer_field_dc_contributor_author_last" );
+					var acelemf = $( "#aspect_submission_StepTransformer_field_dc_contributor_author_first" );
+					function logf(message) {
+						var res = message.split(" / ");
+						var first = res[1];
+						acelemf.val(first);
+						var last = res[0];
+						var id = res[3];
+						acelem.val(last + " (DHARE: " + id + ")");
+					}
+			
+					acelem.autocomplete(
+					{
+						source : function(request, response) {
+							$.ajax({
+								url : "http://83.212.169.67:5000/api/v1.0/person",
+								dataType : "json",
+								data : {
+									last : request.term.toString("utf-8"),
+									first : acelemf.val()
+								},
+								success : function(data) {
+									response($.map(data, function(v, i) {
+										if (v.DHARE_ID) {
+											return v.PrimaryLastName_GR + " / "
+													+ v.PrimaryFirstName_GR + " / "
+													+ v.Affiliation_GR + " / "
+													+ v.DHARE_ID;
+										} else {
+											return "Please narrow down your search";
+										}
+									}));
+								},
+								error : function() {
+									response([]);
+								}
+							});
+						},
+						minLength : 4,
+						select : function(event, ui) {
+							logf(ui.item ? ui.item.label
+									: "Nothing selected, input was " + this.value);
+							return false;
+						},
+						open : function() {
+							$(this).removeClass("ui-corner-all").addClass(
+									"ui-corner-top");
+						},
+						close : function() {
+							$(this).removeClass("ui-corner-top").addClass(
+									"ui-corner-all");
+						}
+					});
+					
+					function logl( message ) {
+					    var res = message.split(" / ");
+					    var first = res[1];
+					    acelemf.val( first );
+					    var last = res[0];
+					    var id = res[3];
+					    acelem.val( last + " (DHARE: " + id  + ")" );
+					  }
+					
+					acelemf.autocomplete({
+					    source: function( request, response ) {
+					      $.ajax({
+					        url: "http://83.212.169.67:5000/api/v1.0/person",
+					        dataType: "json",
+					        data: {
+					          first: request.term.toString("utf-8"),
+					          last: acelem.val()
+					        },
+					        success: function (data) {
+					            response($.map(data, function (v,i) {
+					                  if (v.DHARE_ID) {
+					                      return v.PrimaryLastName_GR + " / " + v.PrimaryFirstName_GR + " / " +  v.Affiliation_GR + " / " + v.DHARE_ID;
+					                  }
+					                  else { return "Please narrow down your search";  }
+					              }));
+					          },
+					          error: function () {
+					              response([]);
+					          }
+					      });
+					    },
+					    position: { of: "#aspect_submission_StepTransformer_field_dc_contributor_author_last" },
+					    select: function( event, ui ) {
+					      logl( ui.item ?
+					        ui.item.label :
+					        "Nothing selected, input was " + this.value);
+					      return false;
+					    },
+					    open: function() {
+					      $( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
+					    },
+					    close: function() {
+					      $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
+					    }
+					  });
+				});</xsl:text>        
+        </script>
+        </xsl:if>
         <!-- END aanagnostopoulos -->
         
     </xsl:template>
