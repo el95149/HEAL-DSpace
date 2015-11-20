@@ -569,9 +569,11 @@
                     </a>
                 </div>
 		<div id="ds-footer-logo2">
+		    <p>
 		    <a>
 		    <xsl:text> | </xsl:text>
 		    </a>
+		    </p>
 		</div>
                 <!--Invisible link to HTML sitemap (for search engines) -->
                 <a class="hidden">
