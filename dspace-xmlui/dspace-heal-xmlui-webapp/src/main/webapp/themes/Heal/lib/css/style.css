@@ -192,6 +192,12 @@ select.multiple {
 #ds-footer-links {
     clear: left;
 }
+#ds-footer-logo2 {
+	display: inline-block;
+	background: url('../../images/flogo.png');
+	width: 600px;
+    height: 77px;
+	}
 
 .ie6 #ds-footer-links {
     display: inline;

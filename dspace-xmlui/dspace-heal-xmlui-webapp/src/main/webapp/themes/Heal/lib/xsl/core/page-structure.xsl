@@ -568,6 +568,11 @@
                         <i18n:text>xmlui.dri2xhtml.structural.feedback-link</i18n:text>
                     </a>
                 </div>
+		<div id="ds-footer-logo2">
+		    <a>
+		    <xsl:text> | </xsl:text>
+		    </a>
+		</div>
                 <!--Invisible link to HTML sitemap (for search engines) -->
                 <a class="hidden">
                     <xsl:attribute name="href">
