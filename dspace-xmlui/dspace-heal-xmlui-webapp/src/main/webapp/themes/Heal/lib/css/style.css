@@ -196,7 +196,9 @@ select.multiple {
 	display: inline-block;
 	background: url('../../images/flogo.png');
 	width: 600px;
-    height: 77px;
+    	height: 97px;
+	background-position:center;
+	background-repeat: no-repeat;
 	}
 
 .ie6 #ds-footer-links {
